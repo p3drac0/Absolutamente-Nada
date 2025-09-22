@@ -1,15 +1,16 @@
-[gd_scene load_steps=16 format=3 uid="uid://c66gmewmfxc0f"]
+[gd_scene load_steps=17 format=3 uid="uid://c66gmewmfxc0f"]
 
-[ext_resource type="Script" uid="uid://dbljnlr377p6r" path="res://src/scenes/text container/text_container.gd" id="1_cvmri"]
-[ext_resource type="LabelSettings" uid="uid://ca41asmhqaxc2" path="res://assets/fonts/shadow_label.tres" id="2_7hqxf"]
-[ext_resource type="AudioStream" uid="uid://c7uq85vuqj2dk" path="res://assets/sounds/typewriter.mp3" id="3_cvmri"]
-[ext_resource type="Script" uid="uid://dvdukcco1gpvl" path="res://src/scenes/text container/text_fms.gd" id="4_ejgs0"]
-[ext_resource type="Script" uid="uid://uswmx6g2l8iy" path="res://src/scenes/text container/writing_state.gd" id="5_5clup"]
-[ext_resource type="Script" uid="uid://c2d5ridrot52g" path="res://src/scenes/text container/paused_state.gd" id="6_3qoid"]
-[ext_resource type="Script" uid="uid://b050xem1x5gyx" path="res://src/scenes/text container/finished_state.gd" id="7_og3i7"]
-[ext_resource type="Script" uid="uid://me2entdn0emk" path="res://src/scenes/text container/empty_state.gd" id="8_jsl2u"]
-[ext_resource type="Script" uid="uid://on3pgdm0fyc7" path="res://src/scenes/text container/choosing_state.gd" id="9_y88ty"]
-[ext_resource type="Script" uid="uid://bqjbpghwtq03w" path="res://src/scenes/text container/state_label.gd" id="11_5bpet"]
+[ext_resource type="Script" uid="uid://dbljnlr377p6r" path="res://src/scenes/text_box/text_box.gd" id="1_daun3"]
+[ext_resource type="LabelSettings" uid="uid://ca41asmhqaxc2" path="res://assets/fonts/shadow_label.tres" id="2_lc1ml"]
+[ext_resource type="Script" uid="uid://bf28w1u3eef74" path="res://src/scenes/each_scene/act_1/scene_1/scene_1_text.gd" id="2_qjvr6"]
+[ext_resource type="AudioStream" uid="uid://c7uq85vuqj2dk" path="res://assets/sounds/typewriter.mp3" id="3_qjvr6"]
+[ext_resource type="Script" uid="uid://dvdukcco1gpvl" path="res://src/scenes/text_box/text_fms.gd" id="4_xdp5p"]
+[ext_resource type="Script" uid="uid://uswmx6g2l8iy" path="res://src/scenes/text_box/writing_state.gd" id="5_44qgq"]
+[ext_resource type="Script" uid="uid://c2d5ridrot52g" path="res://src/scenes/text_box/paused_state.gd" id="6_ws2ac"]
+[ext_resource type="Script" uid="uid://b050xem1x5gyx" path="res://src/scenes/text_box/finished_state.gd" id="7_64ru6"]
+[ext_resource type="Script" uid="uid://me2entdn0emk" path="res://src/scenes/text_box/empty_state.gd" id="8_nv05n"]
+[ext_resource type="Script" uid="uid://on3pgdm0fyc7" path="res://src/scenes/text_box/choosing_state.gd" id="9_ngdqp"]
+[ext_resource type="Script" uid="uid://bqjbpghwtq03w" path="res://src/scenes/text_box/state_label.gd" id="10_3ftsg"]
 
 [sub_resource type="Gradient" id="Gradient_to4et"]
 offsets = PackedFloat32Array(0, 0.818182)
@@ -59,7 +60,7 @@ _data = {
 &"arrow_blink": SubResource("Animation_y8vpp")
 }
 
-[node name="TextContainer" type="Control"]
+[node name="TextBox" type="Control"]
 layout_mode = 3
 anchor_left = -0.221
 anchor_right = 0.35
@@ -70,13 +71,14 @@ offset_right = 443.0
 offset_bottom = -156.92
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_cvmri")
+script = ExtResource("1_daun3")
+text_data = ExtResource("2_qjvr6")
 
 [node name="Container" type="TextureRect" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 1.13213e+07
+anchor_right = 11321300.0
 offset_left = -1115.0
 offset_right = 32.0
 offset_bottom = 161.0
@@ -99,18 +101,20 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 text = "No es verdad, ángel de amor, que en aquella apartada orilla, más rica es la empanadilla y sabe francamente mejor?"
-label_settings = ExtResource("2_7hqxf")
+label_settings = ExtResource("2_lc1ml")
+vertical_alignment = 1
 autowrap_mode = 2
+visible_characters_behavior = 1
 
 [node name="Arrow" type="Label" parent="Container"]
 layout_mode = 0
 offset_left = 608.0
-offset_top = 111.0
+offset_top = 123.0
 offset_right = 684.0
-offset_bottom = 172.0
+offset_bottom = 184.0
 scale = Vector2(0.5, 0.5)
 text = "▼"
-label_settings = ExtResource("2_7hqxf")
+label_settings = ExtResource("2_lc1ml")
 
 [node name="Choices" type="VBoxContainer" parent="Container"]
 layout_mode = 0
@@ -125,27 +129,27 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_cvmri")
+stream = ExtResource("3_qjvr6")
 
 [node name="FMS" type="Node" parent="." node_paths=PackedStringArray("current_state", "actor")]
-script = ExtResource("4_ejgs0")
+script = ExtResource("4_xdp5p")
 current_state = NodePath("Empty")
 actor = NodePath("..")
 
 [node name="Writing" type="Node" parent="FMS"]
-script = ExtResource("5_5clup")
+script = ExtResource("5_44qgq")
 
 [node name="Paused" type="Node" parent="FMS"]
-script = ExtResource("6_3qoid")
+script = ExtResource("6_ws2ac")
 
 [node name="Finished" type="Node" parent="FMS"]
-script = ExtResource("7_og3i7")
+script = ExtResource("7_64ru6")
 
 [node name="Empty" type="Node" parent="FMS"]
-script = ExtResource("8_jsl2u")
+script = ExtResource("8_nv05n")
 
 [node name="Choosing" type="Node" parent="FMS"]
-script = ExtResource("9_y88ty")
+script = ExtResource("9_ngdqp")
 
 [node name="StateLabel" type="Label" parent="."]
 layout_mode = 0
@@ -153,4 +157,4 @@ offset_left = 39.0
 offset_top = 8.0
 offset_right = 695.0
 offset_bottom = 119.0
-script = ExtResource("11_5bpet")
+script = ExtResource("10_3ftsg")

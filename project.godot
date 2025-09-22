@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Absolutamente nada"
 run/main_scene="uid://gaj8r1d56we6"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -24,7 +24,6 @@ TextData="*res://src/globals/text_data.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
 
 [input]
 

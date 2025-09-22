@@ -25,7 +25,7 @@ layout_mode = 2
 
 [node name="ChoiceLabel" type="Label" parent="Text"]
 layout_direction = 2
-layout_mode = 2
+layout_mode = 0
 offset_left = 23.0
 offset_top = -5.0
 offset_right = 278.0

@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp405qriprfoj"]
+
+[ext_resource type="PackedScene" uid="uid://c66gmewmfxc0f" path="res://src/scenes/text_box/text_box.tscn" id="1_b51e8"]
+[ext_resource type="Texture2D" uid="uid://cd6nlmfedbyek" path="res://icon.svg" id="2_gvr6g"]
+
+[node name="SceneMain" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1077.0
+texture = ExtResource("2_gvr6g")
+
+[node name="Sfx" type="AudioStreamPlayer" parent="."]
+
+[node name="TextBox" parent="." instance=ExtResource("1_b51e8")]
+layout_mode = 1
+anchor_left = 0.20500001
+anchor_top = 0.65900004
+anchor_right = 0.82900006
+anchor_bottom = 0.80200005
+offset_left = 1089.3999
+offset_top = 35.27997
+offset_right = -108.68005
+offset_bottom = -119.160034
