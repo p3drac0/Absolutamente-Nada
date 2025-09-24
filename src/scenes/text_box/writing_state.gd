@@ -5,7 +5,7 @@ extends State
 @onready var audio_stream : AudioStreamPlayer = $"../../AudioStreamPlayer"
 @onready var fms : Node = get_parent() 
 
-var time_gap : float = 0.03
+@onready var time_gap : float = 0.03
 var max_visible_lines : int = 2 
 var timer : Timer = null
 var end : bool = false
@@ -13,6 +13,7 @@ var end : bool = false
 func enter(previous_state_name : String) -> void:
     
     end = false
+    text_label.visible = true
     
     text_label.visible_characters = 0
     text_label.text = fms.text[fms.text_ind]
@@ -30,11 +31,11 @@ func _on_timer_timeout():
     
     add_character()
 
-    #check if 3rd line reached
     if text_label.visible_characters == text_label.text.length():
         timer.stop()
-        #we need to keep showing the current message
         audio_stream.stop()
+            
+        #we need to keep showing the current message
         emit_signal("set_next_state","Paused")
 
 func add_character():
@@ -42,6 +43,9 @@ func add_character():
 
 func handle_input(_event: InputEvent) -> void:
     if _event.is_action_pressed("continue"):
-        timer.wait_time = 0.00001
+        time_gap = 0.00001
+        timer.wait_time = time_gap
+        
     if _event.is_action_released("continue"):
+        time_gap = 0.03
         timer.wait_time = time_gap

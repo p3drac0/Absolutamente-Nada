@@ -16,4 +16,8 @@ func handle_input(_event: InputEvent) -> void:
             emit_signal("set_next_state", "Writing")
             
         else:
+            if fms.trigger_choice != "":
+                fms.emit_signal("triggering", fms.trigger_choice)
+                fms.trigger_choice = ""
+                
             emit_signal("set_next_state", "Choosing")

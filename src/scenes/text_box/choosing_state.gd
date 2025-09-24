@@ -5,49 +5,83 @@ const CHOICE_SCENE = preload("res://src/scenes/choice/choice.tscn")
 @onready var fms: Node = get_parent()
 @onready var choices_container: VBoxContainer = $"../../Container/Choices"
 
+@onready var choices_text: Array
+@onready var answers_text: Array 
+@onready var triggers: Array 
+
 var marked_choice: int = 0
 
 func enter(previous_state_name: String):
+    var i : int = 0
+    
     #hide text 
     $"../../Container/Text".text=""
     $"../../Container/Text".visible = false
     $"../../Container/Arrow".visible = false
     
     choices_container.visible = true
-
-    for choice in fms.choices:
-        var new_choice = CHOICE_SCENE.instantiate()
-        choices_container.add_child(new_choice)
-        
-        new_choice.choice_label.text = choice
     
-    choices_container.get_children()[0].select()
+    answers_text = []
+    choices_text = []
+    triggers = []
+    
+    for choice in fms.all_choices:
+        if choice in fms.choices_blocked:
+            i += 1
+            continue 
+            
+        var new_choice = CHOICE_SCENE.instantiate()
+        
+        choices_container.add_child(new_choice)
+        new_choice.choice_label.text = choice
+        
+        choices_text.append(choice)
+        answers_text.append(fms.all_answers[i])
+        triggers.append(fms.all_triggers[i])
+        
+        i += 1
+    
+    if choices_container.get_children().size() > 0: 
+        choices_container.get_children()[0].select()
+        
+    else:
+        emit_signal("set_next_state", "Finished")
+        
     
 func handle_input(_event: InputEvent) -> void:
+    var choices : Array = choices_container.get_children()
     
     if _event.is_action_pressed("up"):
         if marked_choice == 0:
-            marked_choice=choices_container.get_children().size() - 1
+            marked_choice = choices.size() - 1
             
         else:
             marked_choice -= 1
             
-        choices_container.get_children()[marked_choice].select()
+        choices[marked_choice].select()
         
     elif _event.is_action_pressed("down"):
-        if marked_choice + 1> choices_container.get_children().size()-1 :
+        if marked_choice + 1 > choices.size() - 1:
             marked_choice=0
             
         else:
             marked_choice+=1
-        choices_container.get_children()[marked_choice].select()
+        choices[marked_choice].select()
         
     elif _event.is_action_pressed("continue"):
         clean_choices()
         
-        fms.choices.remove_at(marked_choice)
-        fms.text = fms.answers[marked_choice]
-        emit_signal("set_next_state","Finished")
+        fms.choices_blocked.append(choices_text[marked_choice]) 
+        
+        fms.text = answers_text[marked_choice]
+        
+        if triggers[marked_choice] == true:
+            fms.trigger_choice = choices_text[marked_choice]
+        
+        fms.text_ind = 0
+        fms.max_text_ind = fms.text.size()
+        
+        emit_signal("set_next_state","Writing")
         
     elif _event.is_action_pressed("replay"):
         clean_choices()
