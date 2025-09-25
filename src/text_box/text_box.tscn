@@ -1,16 +1,16 @@
 [gd_scene load_steps=17 format=3 uid="uid://c66gmewmfxc0f"]
 
-[ext_resource type="Script" uid="uid://dbljnlr377p6r" path="res://src/scenes/text_box/text_box.gd" id="1_daun3"]
+[ext_resource type="Script" uid="uid://dbljnlr377p6r" path="res://src/text_box/text_box.gd" id="1_daun3"]
 [ext_resource type="LabelSettings" uid="uid://ca41asmhqaxc2" path="res://assets/fonts/shadow_label.tres" id="2_lc1ml"]
 [ext_resource type="Script" uid="uid://bf28w1u3eef74" path="res://src/scenes/each_scene/act_1/scene_1/scene_1_text.gd" id="2_qjvr6"]
 [ext_resource type="AudioStream" uid="uid://c7uq85vuqj2dk" path="res://assets/sounds/typewriter.mp3" id="3_qjvr6"]
-[ext_resource type="Script" uid="uid://dvdukcco1gpvl" path="res://src/scenes/text_box/text_fms.gd" id="4_xdp5p"]
-[ext_resource type="Script" uid="uid://uswmx6g2l8iy" path="res://src/scenes/text_box/writing_state.gd" id="5_44qgq"]
-[ext_resource type="Script" uid="uid://c2d5ridrot52g" path="res://src/scenes/text_box/paused_state.gd" id="6_ws2ac"]
-[ext_resource type="Script" uid="uid://b050xem1x5gyx" path="res://src/scenes/text_box/finished_state.gd" id="7_64ru6"]
-[ext_resource type="Script" uid="uid://me2entdn0emk" path="res://src/scenes/text_box/empty_state.gd" id="8_nv05n"]
-[ext_resource type="Script" uid="uid://on3pgdm0fyc7" path="res://src/scenes/text_box/choosing_state.gd" id="9_ngdqp"]
-[ext_resource type="Script" uid="uid://bqjbpghwtq03w" path="res://src/scenes/text_box/state_label.gd" id="10_3ftsg"]
+[ext_resource type="Script" uid="uid://dvdukcco1gpvl" path="res://src/text_box/text_fms.gd" id="4_xdp5p"]
+[ext_resource type="Script" uid="uid://uswmx6g2l8iy" path="res://src/text_box/writing_state.gd" id="5_44qgq"]
+[ext_resource type="Script" uid="uid://c2d5ridrot52g" path="res://src/text_box/paused_state.gd" id="6_ws2ac"]
+[ext_resource type="Script" uid="uid://b050xem1x5gyx" path="res://src/text_box/finished_state.gd" id="7_64ru6"]
+[ext_resource type="Script" uid="uid://me2entdn0emk" path="res://src/text_box/empty_state.gd" id="8_nv05n"]
+[ext_resource type="Script" uid="uid://on3pgdm0fyc7" path="res://src/text_box/choosing_state.gd" id="9_ngdqp"]
+[ext_resource type="Script" uid="uid://bqjbpghwtq03w" path="res://src/text_box/state_label.gd" id="10_3ftsg"]
 
 [sub_resource type="Gradient" id="Gradient_to4et"]
 offsets = PackedFloat32Array(0, 0.818182)
@@ -62,13 +62,11 @@ _data = {
 
 [node name="TextBox" type="Control"]
 layout_mode = 3
-anchor_left = -0.221
-anchor_right = 0.35
-anchor_bottom = 0.149
-offset_left = 1539.32
-offset_top = 4.0
-offset_right = 443.0
-offset_bottom = -156.92
+anchors_preset = 0
+offset_left = 1115.0
+offset_top = -2.3200002
+offset_right = 1115.0
+offset_bottom = -2.3200002
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_daun3")
@@ -78,25 +76,24 @@ text_data = ExtResource("2_qjvr6")
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 11321300.0
-offset_left = -1115.0
-offset_right = 32.0
-offset_bottom = 161.0
+offset_left = -558.0
+offset_right = 558.0
+offset_bottom = 153.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = SubResource("GradientTexture2D_tjo2i")
 
 [node name="Text" type="Label" parent="Container"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -414.0
-offset_top = -45.5
-offset_right = 1540.0
-offset_bottom = 203.5
+anchors_preset = -1
+anchor_left = 0.022000002
+anchor_top = 0.072000004
+anchor_right = 0.022000002
+anchor_bottom = 0.072000004
+offset_left = -24.552002
+offset_top = -11.016001
+offset_right = 1929.448
+offset_bottom = 255.984
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
@@ -108,20 +105,21 @@ visible_characters_behavior = 1
 
 [node name="Arrow" type="Label" parent="Container"]
 layout_mode = 0
-offset_left = 608.0
-offset_top = 123.0
-offset_right = 684.0
-offset_bottom = 184.0
+offset_left = 481.0
+offset_top = 104.0
+offset_right = 557.0
+offset_bottom = 165.0
 scale = Vector2(0.5, 0.5)
 text = "▼"
 label_settings = ExtResource("2_lc1ml")
 
 [node name="Choices" type="VBoxContainer" parent="Container"]
-layout_mode = 0
-offset_left = 168.0
-offset_top = 46.0
-offset_right = 462.0
-offset_bottom = 202.0
+layout_mode = 1
+anchors_preset = -1
+offset_left = 718.0
+offset_top = -156.68
+offset_right = 901.0
+offset_bottom = 3.3200073
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -2,7 +2,7 @@ extends State
 
 @onready var fms : Node = get_parent()
 
-func enter(previous_state_name : String):
+func enter(_previous_state_name : String):
     $"../../AnimationPlayer".play("arrow_blink")
 
 func handle_input(_event: InputEvent) -> void:
@@ -17,7 +17,8 @@ func handle_input(_event: InputEvent) -> void:
             
         else:
             if fms.trigger_choice != "":
-                fms.emit_signal("triggering", fms.trigger_choice)
+                fms.emit_trigger_signal(fms.trigger_choice)
                 fms.trigger_choice = ""
-                
-            emit_signal("set_next_state", "Choosing")
+            
+            else:
+                emit_signal("set_next_state", "Choosing")

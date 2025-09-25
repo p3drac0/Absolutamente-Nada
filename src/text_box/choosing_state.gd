@@ -1,6 +1,8 @@
 extends State
 
-const CHOICE_SCENE = preload("res://src/scenes/choice/choice.tscn")
+const CHOICE_SCENE = preload("res://src/choice/choice.tscn")
+
+@export var spacing_per_choice: float = 30
 
 @onready var fms: Node = get_parent()
 @onready var choices_container: VBoxContainer = $"../../Container/Choices"
@@ -11,14 +13,15 @@ const CHOICE_SCENE = preload("res://src/scenes/choice/choice.tscn")
 
 var marked_choice: int = 0
 
-func enter(previous_state_name: String):
+func enter(_previous_state_name: String):
     var i : int = 0
     
     #hide text 
-    $"../../Container/Text".text=""
-    $"../../Container/Text".visible = false
+    #$"../../Container/Text".text=""
+    #$"../../Container/Text".visible = false
     $"../../Container/Arrow".visible = false
     
+    marked_choice = 0
     choices_container.visible = true
     
     answers_text = []
@@ -33,6 +36,11 @@ func enter(previous_state_name: String):
         var new_choice = CHOICE_SCENE.instantiate()
         
         choices_container.add_child(new_choice)
+        
+        new_choice.custom_minimum_size.y = 50
+        # evitar que se expandan verticalmente
+        new_choice.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+        
         new_choice.choice_label.text = choice
         
         choices_text.append(choice)
@@ -40,6 +48,7 @@ func enter(previous_state_name: String):
         triggers.append(fms.all_triggers[i])
         
         i += 1
+    
     
     if choices_container.get_children().size() > 0: 
         choices_container.get_children()[0].select()
@@ -74,6 +83,7 @@ func handle_input(_event: InputEvent) -> void:
         fms.choices_blocked.append(choices_text[marked_choice]) 
         
         fms.text = answers_text[marked_choice]
+        fms.emit_text_to_add_signal(choices_text[marked_choice], fms.actors[1])
         
         if triggers[marked_choice] == true:
             fms.trigger_choice = choices_text[marked_choice]
@@ -81,10 +91,6 @@ func handle_input(_event: InputEvent) -> void:
         fms.text_ind = 0
         fms.max_text_ind = fms.text.size()
         
-        emit_signal("set_next_state","Writing")
-        
-    elif _event.is_action_pressed("replay"):
-        clean_choices()
         emit_signal("set_next_state","Writing")
         
 func clean_choices():

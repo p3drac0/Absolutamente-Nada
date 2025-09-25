@@ -10,13 +10,14 @@ var max_visible_lines : int = 2
 var timer : Timer = null
 var end : bool = false
 
-func enter(previous_state_name : String) -> void:
+func enter(_previous_state_name : String) -> void:
     
     end = false
     text_label.visible = true
     
     text_label.visible_characters = 0
-    text_label.text = fms.text[fms.text_ind]
+    print(fms.text_ind)
+    text_label.text = fms.actors[0] + "  — " + fms.text[fms.text_ind]
     
     arrow.visible = false
     audio_stream.play()
@@ -32,9 +33,11 @@ func _on_timer_timeout():
     add_character()
 
     if text_label.visible_characters == text_label.text.length():
-        timer.stop()
+        timer.queue_free()
         audio_stream.stop()
-            
+        
+        fms.emit_text_to_add_signal(fms.text[fms.text_ind], fms.actors[0])
+        
         #we need to keep showing the current message
         emit_signal("set_next_state","Paused")
 

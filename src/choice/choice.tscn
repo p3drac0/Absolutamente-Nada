@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ci7q4fmhog487"]
 
-[ext_resource type="Script" uid="uid://c4e00hjurgica" path="res://src/scenes/choice/choice.gd" id="1_m8xta"]
+[ext_resource type="Script" uid="uid://c4e00hjurgica" path="res://src/choice/choice.gd" id="1_m8xta"]
 [ext_resource type="LabelSettings" uid="uid://ca41asmhqaxc2" path="res://assets/fonts/shadow_label.tres" id="1_no7vn"]
 
 [node name="Choice" type="HBoxContainer"]

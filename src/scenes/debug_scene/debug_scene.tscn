@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://gaj8r1d56we6"]
 
 [ext_resource type="Script" uid="uid://1i7nd4u6n624" path="res://src/scenes/debug_scene/debug_scene.gd" id="1_0otk7"]
-[ext_resource type="PackedScene" uid="uid://c66gmewmfxc0f" path="res://src/scenes/text_box/text_box.tscn" id="1_5dcj5"]
+[ext_resource type="PackedScene" uid="uid://c66gmewmfxc0f" path="res://src/text_box/text_box.tscn" id="1_5dcj5"]
 
 [node name="DebugScene" type="Control"]
 layout_mode = 3
@@ -60,7 +60,6 @@ alignment = 1
 [node name="TextContainer" parent="." instance=ExtResource("1_5dcj5")]
 layout_mode = 1
 anchors_preset = 15
-anchor_left = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 1486.0

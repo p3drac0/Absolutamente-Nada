@@ -6,6 +6,6 @@ extends State
     #
     #emit_signal("set_next_state","Writing")
     
-func enter(previos_state_name:String):
+func enter(_previous_state_name:String):
     
     $"../../AnimationPlayer".play("arrow_blink")
