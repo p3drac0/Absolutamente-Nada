@@ -16,7 +16,7 @@ func enter(_previous_state_name : String) -> void:
     text_label.visible = true
     
     text_label.visible_characters = 0
-    print(fms.text_ind)
+    
     text_label.text = fms.actors[0] + "  — " + fms.text[fms.text_ind]
     
     arrow.visible = false

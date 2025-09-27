@@ -4,7 +4,24 @@ class_name SceneMain
 @onready var text_box: Control = $TextBox
 @onready var conversation_log: Control = $ConversationLog
 @onready var pause_menu: Control = $PauseMenu
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var sfx: AudioStreamPlayer = $Sfx
 
+
+func _ready() -> void:
+    
+    #Connect needed signals
+    text_box.fms.connect('text_to_add', conversation_log.add_text)
+    text_box.fms.connect("triggering", _on_triggering)
+    
+    start_scene()
+    
+func start_scene() -> void:
+    pass
+    
+func _on_triggering(trigger_choice) -> void:
+    pass
+    
 func _input(event: InputEvent) -> void:
     
     if event.is_action_pressed("replay"):

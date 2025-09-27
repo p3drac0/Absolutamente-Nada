@@ -10,9 +10,8 @@ func handle_input(_event: InputEvent) -> void:
         $"../../AnimationPlayer".stop()
         $"../../Container/Arrow".visible = false
         
-        fms.text_ind += 1
-
         if fms.text_ind < fms.max_text_ind:
+            fms.text_ind += 1
             emit_signal("set_next_state", "Writing")
             
         else:
@@ -20,5 +19,8 @@ func handle_input(_event: InputEvent) -> void:
                 fms.emit_trigger_signal(fms.trigger_choice)
                 fms.trigger_choice = ""
             
+            elif fms.all_choices.size() == 0:
+                fms.emit_trigger_signal(str(fms.text_id))
+                
             else:
                 emit_signal("set_next_state", "Choosing")

@@ -7,14 +7,13 @@ func start_pause_menu() -> void:
     get_tree().paused = true
     animation_player.play("fade_in")
     
-
 func quit_pause_menu() -> void:
     animation_player.play("fade_out")
     await animation_player.animation_finished 
     get_tree().paused = false
     
 func _on_resume_button_pressed() -> void:
-    get_tree().paused = false
+    quit_pause_menu()
 
 func _on_save_button_pressed() -> void:
     pass # Replace with function body.

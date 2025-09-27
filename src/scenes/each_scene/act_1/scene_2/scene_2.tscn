@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqt6ugnlk4r68"]
+
+[ext_resource type="PackedScene" uid="uid://cp405qriprfoj" path="res://src/scenes/scene_main.tscn" id="1_w8s1t"]
+[ext_resource type="Script" uid="uid://c2qtg1pbkudva" path="res://src/scenes/each_scene/act_1/scene_2/scene_2.gd" id="2_cn354"]
+
+[sub_resource type="Animation" id="Animation_w8s1t"]
+resource_name = "photo_in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cn354"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kj81w"]
+_data = {
+&"RESET": SubResource("Animation_cn354"),
+&"photo_in": SubResource("Animation_w8s1t")
+}
+
+[node name="Scene2" instance=ExtResource("1_w8s1t")]
+script = ExtResource("2_cn354")
+
+[node name="AnimationPlayer" parent="." index="0"]
+libraries = {
+&"": SubResource("AnimationLibrary_kj81w")
+}
+
+[node name="ColorRect" type="ColorRect" parent="." index="2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.096204735, 0.09620475, 0.096204735, 1)
+
+[node name="TextBox" parent="." index="4"]
+anchor_right = 0.83900005
+anchor_bottom = 0.859
+offset_left = 652.39996
+offset_top = 66.27997
+offset_right = -564.8801
+offset_bottom = -149.72003
+
+[node name="ConversationLog" parent="." index="5"]
+self_modulate = Color(1, 1, 1, 0)

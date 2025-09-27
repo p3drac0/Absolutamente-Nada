@@ -22,28 +22,23 @@ func emit_trigger_signal(trigger_choice_: String):
 func emit_text_to_add_signal(text_to_add_: String, who_: String):
     emit_signal('text_to_add', text_to_add_, who_)
     
-func play_script_text():
+func play_script_text(text_id: int):
     
     var text_dict : Dictionary = get_parent().text_dict
-    
     #The FMS checks if it is posible to play the script
-    if current_state.name == "Empty":
+    current_state = get_node("Empty")
+    trigger_choice = ""
+    
+    text =  text_dict[text_id]["text"]
+    all_choices = text_dict[text_id]["choices"]
+    all_answers = text_dict[text_id]["answers"]
+    all_triggers = text_dict[text_id]["triggers"]
+    actors = text_dict[text_id]["actors"]
+    
+    choices_blocked = []
+    
+    text_ind = 0
+    max_text_ind = text.size() - 1
+    
+    current_state.start_writing()
         
-        trigger_choice = ""
-        
-        text =  text_dict[text_id]["text"]
-        all_choices = text_dict[text_id]["choices"]
-        all_answers = text_dict[text_id]["answers"]
-        all_triggers = text_dict[text_id]["triggers"]
-        actors = text_dict[text_id]["actors"]
-        
-        choices_blocked = []
-        
-        text_ind = 0
-        max_text_ind = text.size()
-        
-        current_state.start_writing()
-        
-    else:
-        #in case, it is writing or paused, they will refuse the request and show this warning
-        print("Unable to play text because TextContainer is in state: " + current_state.name)
