@@ -1,7 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqt6ugnlk4r68"]
+[gd_scene load_steps=7 format=3 uid="uid://dqt6ugnlk4r68"]
 
 [ext_resource type="PackedScene" uid="uid://cp405qriprfoj" path="res://src/scenes/scene_main.tscn" id="1_w8s1t"]
 [ext_resource type="Script" uid="uid://c2qtg1pbkudva" path="res://src/scenes/each_scene/act_1/scene_2/scene_2.gd" id="2_cn354"]
+[ext_resource type="Script" uid="uid://bf28w1u3eef74" path="res://src/scenes/each_scene/act_1/scene_2/scene_2_text.gd" id="3_cn354"]
+
+[sub_resource type="Animation" id="Animation_cn354"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_w8s1t"]
 resource_name = "photo_in"
@@ -17,21 +33,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_cn354"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kj81w"]
@@ -58,12 +59,7 @@ grow_vertical = 2
 color = Color(0.096204735, 0.09620475, 0.096204735, 1)
 
 [node name="TextBox" parent="." index="4"]
-anchor_right = 0.83900005
-anchor_bottom = 0.859
-offset_left = 652.39996
-offset_top = 66.27997
-offset_right = -564.8801
-offset_bottom = -149.72003
+text_data = ExtResource("3_cn354")
 
 [node name="ConversationLog" parent="." index="5"]
 self_modulate = Color(1, 1, 1, 0)

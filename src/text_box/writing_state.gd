@@ -1,7 +1,7 @@
 extends State
 
-@onready var text_label : Label = $"../../Container/Text"
-@onready var arrow : Label = $"../../Container/Arrow"
+@onready var text_label : Label = $"../../PanelContainer/Text"
+@onready var arrow : Label = $"../../PanelContainer/Arrow"
 @onready var audio_stream : AudioStreamPlayer = $"../../AudioStreamPlayer"
 @onready var fms : Node = get_parent() 
 

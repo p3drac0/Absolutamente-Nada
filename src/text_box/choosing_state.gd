@@ -4,8 +4,11 @@ const CHOICE_SCENE = preload("res://src/choice/choice.tscn")
 
 @export var spacing_per_choice: float = 30
 
+@onready var text_label : Label = $"../../PanelContainer/Text"
+@onready var arrow : Label = $"../../PanelContainer/Arrow"
+
 @onready var fms: Node = get_parent()
-@onready var choices_container: VBoxContainer = $"../../Container/Choices"
+@onready var choices_container: VBoxContainer = $"../../Choices"
 
 @onready var choices_text: Array
 @onready var answers_text: Array 
@@ -19,7 +22,7 @@ func enter(_previous_state_name: String):
     #hide text 
     #$"../../Container/Text".text=""
     #$"../../Container/Text".visible = false
-    $"../../Container/Arrow".visible = false
+    arrow.visible = false
     
     marked_choice = 0
     choices_container.visible = true

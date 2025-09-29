@@ -22,12 +22,15 @@ func emit_trigger_signal(trigger_choice_: String):
 func emit_text_to_add_signal(text_to_add_: String, who_: String):
     emit_signal('text_to_add', text_to_add_, who_)
     
-func play_script_text(text_id: int):
+func play_script_text(id: int):
     
     var text_dict : Dictionary = get_parent().text_dict
+    
     #The FMS checks if it is posible to play the script
     current_state = get_node("Empty")
     trigger_choice = ""
+    
+    text_id = id
     
     text =  text_dict[text_id]["text"]
     all_choices = text_dict[text_id]["choices"]

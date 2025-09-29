@@ -1,8 +1,8 @@
 [gd_scene load_steps=17 format=3 uid="uid://c66gmewmfxc0f"]
 
 [ext_resource type="Script" uid="uid://dbljnlr377p6r" path="res://src/text_box/text_box.gd" id="1_daun3"]
+[ext_resource type="Script" uid="uid://djwr2a44b327c" path="res://src/scenes/each_scene/act_1/scene_3/scene_3_text.gd" id="2_iauxq"]
 [ext_resource type="LabelSettings" uid="uid://ca41asmhqaxc2" path="res://assets/fonts/shadow_label.tres" id="2_lc1ml"]
-[ext_resource type="Script" uid="uid://bf28w1u3eef74" path="res://src/scenes/each_scene/act_1/scene_2/scene_2_text.gd" id="2_qjvr6"]
 [ext_resource type="AudioStream" uid="uid://c7uq85vuqj2dk" path="res://assets/sounds/typewriter.mp3" id="3_qjvr6"]
 [ext_resource type="Script" uid="uid://dvdukcco1gpvl" path="res://src/text_box/text_fms.gd" id="4_xdp5p"]
 [ext_resource type="Script" uid="uid://uswmx6g2l8iy" path="res://src/text_box/writing_state.gd" id="5_44qgq"]
@@ -27,7 +27,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Container/Arrow:visible")
+tracks/0/path = NodePath("PanelContainer/Arrow:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -44,7 +44,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Container/Arrow:visible")
+tracks/0/path = NodePath("PanelContainer/Arrow:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -62,64 +62,64 @@ _data = {
 
 [node name="TextBox" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_left = 1115.0
-offset_top = -2.3200002
-offset_right = 1115.0
-offset_bottom = -2.3200002
+anchor_top = 0.7
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 200.0
+offset_right = -200.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_daun3")
-text_data = ExtResource("2_qjvr6")
+text_data = ExtResource("2_iauxq")
 
-[node name="Container" type="TextureRect" parent="."]
-self_modulate = Color(1, 1, 1, 0)
+[node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
-anchors_preset = -1
-offset_left = -558.0
-offset_right = 558.0
-offset_bottom = 153.0
-grow_horizontal = 2
-grow_vertical = 0
-texture = SubResource("GradientTexture2D_tjo2i")
-
-[node name="Text" type="Label" parent="Container"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.022000002
-anchor_top = 0.072000004
-anchor_right = 0.022000002
-anchor_bottom = 0.072000004
-offset_left = -24.552002
-offset_top = -11.016001
-offset_right = 1929.448
-offset_bottom = 255.984
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.5, 0.5)
+
+[node name="TextBoxBackground" type="TextureRect" parent="PanelContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+texture = SubResource("GradientTexture2D_tjo2i")
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="Label" parent="PanelContainer"]
+custom_minimum_size = Vector2(720, 200)
+layout_mode = 2
 text = "No es verdad, ángel de amor, que en aquella apartada orilla, más rica es la empanadilla y sabe francamente mejor?"
 label_settings = ExtResource("2_lc1ml")
 vertical_alignment = 1
 autowrap_mode = 2
 visible_characters_behavior = 1
 
-[node name="Arrow" type="Label" parent="Container"]
-layout_mode = 0
-offset_left = 481.0
-offset_top = 104.0
-offset_right = 557.0
-offset_bottom = 165.0
-scale = Vector2(0.5, 0.5)
+[node name="Arrow" type="Label" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
 text = "▼"
 label_settings = ExtResource("2_lc1ml")
 
-[node name="Choices" type="VBoxContainer" parent="Container"]
+[node name="StateLabel" type="Label" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+script = ExtResource("10_3ftsg")
+
+[node name="Choices" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 718.0
-offset_top = -156.68
-offset_right = 901.0
-offset_bottom = 3.3200073
+anchor_left = 0.813
+anchor_top = -0.95600003
+anchor_right = 1.0
+offset_top = -80.25598
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -148,11 +148,3 @@ script = ExtResource("8_nv05n")
 
 [node name="Choosing" type="Node" parent="FMS"]
 script = ExtResource("9_ngdqp")
-
-[node name="StateLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 39.0
-offset_top = 8.0
-offset_right = 695.0
-offset_bottom = 119.0
-script = ExtResource("10_3ftsg")

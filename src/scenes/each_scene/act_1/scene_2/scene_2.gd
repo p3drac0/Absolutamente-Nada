@@ -9,6 +9,7 @@ func start_scene() -> void:
 
 func _on_triggering(trigger) -> void:
     
+    print(trigger)
     if trigger == "0":
         text_box.text_label.text = ""
         animation_player.play('photo_in')
@@ -16,4 +17,5 @@ func _on_triggering(trigger) -> void:
         text_box.fms.play_script_text(1)
     
     elif trigger == "1":
+        print('toy')
         get_tree().change_scene_to_file(NEXT_SCENE)
