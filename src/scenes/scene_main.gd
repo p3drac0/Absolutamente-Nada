@@ -46,8 +46,6 @@ func load_photo_batch(folder_path: String):
         frames.remove_animation("default")
     frames.add_animation("default")
     
-    
-    
     for i in files.size():
         tex = load(folder_path + files[i])
         frames.add_frame("default", tex)
@@ -55,7 +53,7 @@ func load_photo_batch(folder_path: String):
     animated_sprite_2d.sprite_frames = frames
     animated_sprite_2d.animation = "default"
     animated_sprite_2d.play()
-    print(fps)
+    
     animated_sprite_2d.speed_scale = fps
     
 func start_scene() -> void:

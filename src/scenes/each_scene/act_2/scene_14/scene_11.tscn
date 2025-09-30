@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cr2go8nltsxqh"]
+[gd_scene load_steps=3 format=3 uid="uid://cr2go8nltsxqh"]
 
 [ext_resource type="PackedScene" uid="uid://cp405qriprfoj" path="res://src/scenes/scene_main.tscn" id="1_gbsrd"]
-[ext_resource type="Script" uid="uid://ce536g8qdf6q7" path="res://src/scenes/each_scene/act_2/scene_10/scene_10_text.gd" id="2_oi7g7"]
 
 [sub_resource type="GDScript" id="GDScript_gbsrd"]
 script/source = "extends SceneMain
@@ -11,5 +10,5 @@ script/source = "extends SceneMain
 script = SubResource("GDScript_gbsrd")
 photo_path = "res://assets/images/scenes/E11/"
 
-[node name="TextBox" parent="CanvasLayer2" index="0"]
-text_data = ExtResource("2_oi7g7")
+[node name="AnimatedSprite2D" parent="." index="2"]
+animation = &"test"
