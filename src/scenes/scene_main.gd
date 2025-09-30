@@ -14,7 +14,6 @@ class_name SceneMain
 var dir
 var file_name 
 var files
-var frames
 var tex
 
 func _ready() -> void:
@@ -26,6 +25,7 @@ func _ready() -> void:
     start_scene()
 
 func load_photo_batch(folder_path: String):
+    var frames
     
     dir = DirAccess.open(folder_path)
     dir.list_dir_begin()
@@ -41,7 +41,12 @@ func load_photo_batch(folder_path: String):
     files.sort()
     
     frames = animated_sprite_2d.sprite_frames
+    
+    if frames.has_animation("default"):
+        frames.remove_animation("default")
     frames.add_animation("default")
+    
+    
     
     for i in files.size():
         tex = load(folder_path + files[i])

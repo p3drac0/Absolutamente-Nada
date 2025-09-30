@@ -5,4 +5,6 @@
 
 [node name="Scene3" instance=ExtResource("1_k247y")]
 script = ExtResource("2_l0h0i")
-photo_path = "res://assets/images/scenes/E3/"
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+animation = &"test"
