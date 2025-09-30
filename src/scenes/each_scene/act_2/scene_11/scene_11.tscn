@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr2go8nltsxqh"]
+
+[ext_resource type="PackedScene" uid="uid://cp405qriprfoj" path="res://src/scenes/scene_main.tscn" id="1_gbsrd"]
+
+[sub_resource type="GDScript" id="GDScript_gbsrd"]
+script/source = "extends SceneMain
+"
+
+[node name="Scene11" instance=ExtResource("1_gbsrd")]
+script = SubResource("GDScript_gbsrd")
+photo_path = "res://assets/images/scenes/E11/"
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+animation = &"test"

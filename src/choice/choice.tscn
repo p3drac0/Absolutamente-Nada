@@ -33,6 +33,7 @@ offset_bottom = 45.0
 size_flags_vertical = 8
 text = "Santiago"
 label_settings = ExtResource("1_no7vn")
+autowrap_mode = 2
 
 [node name="Marker" type="Control" parent="."]
 custom_minimum_size = Vector2(50, 40)

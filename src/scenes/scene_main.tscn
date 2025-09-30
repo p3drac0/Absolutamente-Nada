@@ -1,10 +1,42 @@
-[gd_scene load_steps=7 format=3 uid="uid://cp405qriprfoj"]
+[gd_scene load_steps=14 format=3 uid="uid://cp405qriprfoj"]
 
+[ext_resource type="Script" uid="uid://b5xg8thowocs4" path="res://src/scenes/scene_main.gd" id="1_ay6nr"]
 [ext_resource type="PackedScene" uid="uid://c66gmewmfxc0f" path="res://src/text_box/text_box.tscn" id="1_b51e8"]
-[ext_resource type="Texture2D" uid="uid://141kf7hu7ehk" path="res://assets/images/muelto.jpg" id="1_l4j23"]
+[ext_resource type="Texture2D" uid="uid://dtv5q2lkg23w3" path="res://assets/images/scenes/E3/E3 (1).png" id="2_ay6nr"]
 [ext_resource type="Shader" uid="uid://eeko8kvnablm" path="res://assets/shaders/scene_main.gdshader" id="2_eytah"]
+[ext_resource type="Texture2D" uid="uid://chcns2j5krugg" path="res://assets/images/scenes/E3/E3 (2).png" id="3_qpsf0"]
 [ext_resource type="PackedScene" uid="uid://co6o8vmkgxyhj" path="res://src/conversation_log/conversation_log.tscn" id="3_xe301"]
 [ext_resource type="PackedScene" uid="uid://cm1vtmmqlme7d" path="res://src/pause_menu/pause_menu.tscn" id="4_l4j23"]
+[ext_resource type="Texture2D" uid="uid://bm7wc3gkr28ms" path="res://assets/images/scenes/E3/E3 (3).png" id="4_vlsck"]
+[ext_resource type="Texture2D" uid="uid://bjbcvkk1w71vy" path="res://assets/images/scenes/E3/E3 (4).png" id="5_4pedr"]
+[ext_resource type="Texture2D" uid="uid://dvpasvba6jmk1" path="res://assets/images/scenes/E3/E3 (5).png" id="6_lqltr"]
+[ext_resource type="Texture2D" uid="uid://dicya12jir21l" path="res://assets/images/scenes/E3/E3 (6).png" id="7_xu1fv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4xnec"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ay6nr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qpsf0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vlsck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4pedr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lqltr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xu1fv")
+}],
+"loop": true,
+"name": &"test",
+"speed": 5.0
+}]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t5stg"]
 shader = ExtResource("2_eytah")
@@ -22,7 +54,7 @@ shader_parameter/distort_intensity = 0.20000000298023
 shader_parameter/noise_opacity = 0.0370000017575
 shader_parameter/noise_speed = 1.0
 shader_parameter/static_noise_intensity = 0.11600000551
-shader_parameter/aberration = -0.024999953687499965
+shader_parameter/aberration = -0.02499995368749996
 shader_parameter/brightness = 1.4
 shader_parameter/discolor = true
 shader_parameter/warp_amount = 0.22000001045
@@ -37,6 +69,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ay6nr")
+photo_path = "res://assets/images/scenes/E3/"
 
 [node name="BlackBackground" type="ColorRect" parent="."]
 layout_mode = 0
@@ -46,13 +80,10 @@ color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
-[node name="Background" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-texture = ExtResource("1_l4j23")
-expand_mode = 1
-stretch_mode = 5
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(954.5, 541.5)
+scale = Vector2(1.7078125, 1.6765625)
+sprite_frames = SubResource("SpriteFrames_4xnec")
 
 [node name="Sfx" type="AudioStreamPlayer" parent="."]
 
@@ -67,8 +98,12 @@ offset_bottom = 1080.0
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="TextBox" parent="CanvasLayer2" instance=ExtResource("1_b51e8")]
-offset_left = 260.0
 
 [node name="ConversationLog" parent="CanvasLayer2" instance=ExtResource("3_xe301")]
 
 [node name="PauseMenu" parent="CanvasLayer2" instance=ExtResource("4_l4j23")]
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

@@ -1,12 +1,21 @@
 extends Node
 class_name SceneMain
 
+@export var fps: float = 4
+@export var photo_path: String
+
 @onready var text_box: Control = $CanvasLayer2/TextBox
 @onready var conversation_log: Control = $CanvasLayer2/ConversationLog
 @onready var pause_menu: Control = $CanvasLayer2/PauseMenu
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sfx: AudioStreamPlayer = $Sfx
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+var dir
+var file_name 
+var files
+var frames
+var tex
 
 func _ready() -> void:
     
@@ -15,10 +24,38 @@ func _ready() -> void:
     text_box.fms.connect("triggering", _on_triggering)
     
     start_scene()
+
+func load_photo_batch(folder_path: String):
+    
+    dir = DirAccess.open(folder_path)
+    dir.list_dir_begin()
+    file_name = dir.get_next()
+    files = []
+    
+    while file_name != "":
+        if file_name.ends_with(".png"):
+            files.append(file_name)
+        file_name = dir.get_next()
+    
+    dir.list_dir_end()
+    files.sort()
+    
+    frames = animated_sprite_2d.sprite_frames
+    frames.add_animation("default")
+    
+    for i in files.size():
+        tex = load(folder_path + files[i])
+        frames.add_frame("default", tex)
+    
+    animated_sprite_2d.sprite_frames = frames
+    animated_sprite_2d.animation = "default"
+    animated_sprite_2d.play()
+    print(fps)
+    animated_sprite_2d.speed_scale = fps
     
 func start_scene() -> void:
     pass
-    
+ 
 func _on_triggering(trigger_choice) -> void:
     pass
     
