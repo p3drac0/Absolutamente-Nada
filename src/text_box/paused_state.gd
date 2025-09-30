@@ -1,8 +1,8 @@
 extends State
 
 @onready var fms : Node = get_parent()
-@onready var text_label : Label = $"../../PanelContainer/Text"
-@onready var arrow : Label = $"../../PanelContainer/Arrow"
+@onready var text_label : Label = $"../../TextPanel/Text"
+@onready var arrow : Label = $"../../TextPanel/Arrow"
 
 func enter(_previous_state_name : String):
     $"../../AnimationPlayer".play("arrow_blink")

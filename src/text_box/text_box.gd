@@ -4,8 +4,8 @@ extends Control
 @export var text_data : Script 
 
 @onready var fms : Node = $FMS
-@onready var text_label : Label = $PanelContainer/Text
-@onready var arrow : Label = $PanelContainer/Arrow
+@onready var text_label : Label = $TextPanel/Text
+@onready var arrow : Label = $TextPanel/Arrow
 
 @onready var text_dict : Dictionary =  text_data.new().text_dict
 

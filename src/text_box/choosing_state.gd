@@ -4,8 +4,8 @@ const CHOICE_SCENE = preload("res://src/choice/choice.tscn")
 
 @export var spacing_per_choice: float = 30
 
-@onready var text_label : Label = $"../../PanelContainer/Text"
-@onready var arrow : Label = $"../../PanelContainer/Arrow"
+@onready var text_label : Label = $"../../TextPanel/Text"
+@onready var arrow : Label = $"../../TextPanel/Arrow"
 
 @onready var fms: Node = get_parent()
 @onready var choices_container: VBoxContainer = $"../../Choices"
@@ -88,8 +88,9 @@ func handle_input(_event: InputEvent) -> void:
         
         fms.choices_blocked.append(choices_text[marked_choice]) 
         
-        fms.text = answers_text[marked_choice]
         fms.emit_text_to_add_signal(choices_text[marked_choice], fms.actors[1])
+        
+        fms.text = answers_text[marked_choice]
         
         if triggers[marked_choice] == true:
             fms.trigger_choice = choices_text[marked_choice]

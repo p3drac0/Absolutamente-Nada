@@ -89,6 +89,37 @@ layout_mode = 2
 texture = SubResource("GradientTexture2D_tjo2i")
 metadata/_edit_use_anchors_ = true
 
+[node name="TextPanel" type="PanelContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+offset_left = 20.0
+offset_top = 10.0
+offset_right = 1513.0
+offset_bottom = 210.0
+
+[node name="Text" type="Label" parent="TextPanel"]
+custom_minimum_size = Vector2(720, 200)
+layout_mode = 2
+text = "No es verdad, ángel de amor, que en aquella apartada orilla, más rica es la empanadilla y sabe francamente mejor?"
+label_settings = ExtResource("2_lc1ml")
+vertical_alignment = 1
+autowrap_mode = 2
+visible_characters_behavior = 1
+
+[node name="Arrow" type="Label" parent="TextPanel"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "▼"
+label_settings = ExtResource("2_lc1ml")
+
+[node name="StateLabel" type="Label" parent="TextPanel"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+script = ExtResource("10_3ftsg")
+
 [node name="Choices" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -126,34 +157,3 @@ script = ExtResource("8_nv05n")
 
 [node name="Choosing" type="Node" parent="FMS"]
 script = ExtResource("9_ngdqp")
-
-[node name="TextPanel" type="PanelContainer" parent="."]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = -1
-offset_left = 20.0
-offset_top = 10.0
-offset_right = 1513.0
-offset_bottom = 210.0
-
-[node name="Text" type="Label" parent="TextPanel"]
-custom_minimum_size = Vector2(720, 200)
-layout_mode = 2
-text = "No es verdad, ángel de amor, que en aquella apartada orilla, más rica es la empanadilla y sabe francamente mejor?"
-label_settings = ExtResource("2_lc1ml")
-vertical_alignment = 1
-autowrap_mode = 2
-visible_characters_behavior = 1
-
-[node name="Arrow" type="Label" parent="TextPanel"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-text = "▼"
-label_settings = ExtResource("2_lc1ml")
-
-[node name="StateLabel" type="Label" parent="TextPanel"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-script = ExtResource("10_3ftsg")

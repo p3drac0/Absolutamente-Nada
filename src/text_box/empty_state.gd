@@ -1,7 +1,7 @@
 extends State
 
-@onready var text_label : Label = $"../../PanelContainer/Text"
-@onready var arrow : Label = $"../../PanelContainer/Arrow"
+@onready var text_label : Label = $"../../TextPanel/Text"
+@onready var arrow : Label = $"../../TextPanel/Arrow"
 
 func enter(_previous_state_key: String):
     text_label.visible_characters = 0
