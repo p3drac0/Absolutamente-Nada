@@ -48,7 +48,7 @@ func enter(_previous_state_name: String):
         
         choices_text.append(choice)
         
-        if fms.all_answers.size != 0:
+        if fms.all_answers.size() != 0:
             answers_text.append(fms.all_answers[i])
             
         triggers.append(fms.all_triggers[i])
