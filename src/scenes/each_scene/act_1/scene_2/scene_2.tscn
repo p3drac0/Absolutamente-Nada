@@ -47,12 +47,3 @@ script = ExtResource("2_cn354")
 libraries = {
 &"": SubResource("AnimationLibrary_kj81w")
 }
-
-[node name="ColorRect2" type="ColorRect" parent="." index="2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.096204735, 0.09620475, 0.096204735, 1)

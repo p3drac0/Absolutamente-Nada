@@ -67,6 +67,7 @@ offset_bottom = 1080.0
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="TextBox" parent="CanvasLayer2" instance=ExtResource("1_b51e8")]
+offset_left = 260.0
 
 [node name="ConversationLog" parent="CanvasLayer2" instance=ExtResource("3_xe301")]
 
