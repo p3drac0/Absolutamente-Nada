@@ -9,7 +9,6 @@ func start_scene() -> void:
 
 func _on_triggering(trigger) -> void:
     
-    print(trigger)
     if trigger == "0":
         text_box.text_label.text = ""
         animation_player.play('photo_in')

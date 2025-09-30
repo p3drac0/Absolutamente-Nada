@@ -22,7 +22,6 @@ func handle_input(_event: InputEvent) -> void:
                 fms.trigger_choice = ""
             
             elif fms.all_choices.size() == 0:
-                print(fms.text_id)
                 fms.emit_trigger_signal(str(fms.text_id))
                 
             else:

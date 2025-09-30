@@ -6,7 +6,7 @@ var text_dict: Dictionary = {
             
             "choices": ["Lo clásico siempre triunfa, vamos con el fino.","¿El grueso? Es más frio e incómodo, pero viendo como se ha puesto el día, parece que acompaña."],
             "answers": [],
-            "triggers": [],
+            "triggers": ["ring_1", "ring_2"],
             "actors": ["René"]
             },
         }
