@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cp405qriprfoj"]
 
 [ext_resource type="PackedScene" uid="uid://c66gmewmfxc0f" path="res://src/text_box/text_box.tscn" id="1_b51e8"]
-[ext_resource type="Texture2D" uid="uid://cd6nlmfedbyek" path="res://icon.svg" id="2_gvr6g"]
+[ext_resource type="Texture2D" uid="uid://crcng4trifdax" path="res://assets/images/muelto.jpg" id="1_l4j23"]
 [ext_resource type="PackedScene" uid="uid://co6o8vmkgxyhj" path="res://src/conversation_log/conversation_log.tscn" id="3_xe301"]
 [ext_resource type="PackedScene" uid="uid://cm1vtmmqlme7d" path="res://src/pause_menu/pause_menu.tscn" id="4_l4j23"]
 
@@ -18,8 +18,10 @@ grow_vertical = 2
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 1920.0
-offset_bottom = 1077.0
-texture = ExtResource("2_gvr6g")
+offset_bottom = 1080.0
+texture = ExtResource("1_l4j23")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Sfx" type="AudioStreamPlayer" parent="."]
 

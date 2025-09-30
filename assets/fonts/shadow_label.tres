@@ -1,6 +1,6 @@
 [gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://ca41asmhqaxc2"]
 
-[ext_resource type="FontFile" uid="uid://dubgohtdiacyr" path="res://assets/fonts/typwrng.ttf" id="1_f35fa"]
+[ext_resource type="FontFile" uid="uid://bx2y68v32tckv" path="res://assets/fonts/ShineTypewriter.ttf" id="1_f35fa"]
 
 [resource]
 font = ExtResource("1_f35fa")
