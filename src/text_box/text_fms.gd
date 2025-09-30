@@ -3,7 +3,7 @@ extends StateMachine
 @onready var choices_blocked: Array 
 
 signal triggering(trigger_choice: String)
-signal text_to_add(text_to_add:String, who: String)
+signal text_to_add(text_to_add: String, who: String)
 
 var text: Array 
 var all_choices: Array

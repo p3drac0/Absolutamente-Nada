@@ -9,11 +9,11 @@ func start_scene() -> void:
 
 func _on_triggering(trigger) -> void:
     
-    if trigger == "0":
-        text_box.text_label.text = ""
-        animation_player.play('photo_in')
-        await animation_player.animation_finished
-        text_box.fms.play_script_text(1)
-    
-    elif trigger == "1":
+    if trigger == "ring_1":
+        GameVariables.ring = "ring_1"
         get_tree().change_scene_to_file(NEXT_SCENE)
+        
+    elif trigger == "ring_2":
+        GameVariables.ring = "ring_2"
+        get_tree().change_scene_to_file(NEXT_SCENE)
+        

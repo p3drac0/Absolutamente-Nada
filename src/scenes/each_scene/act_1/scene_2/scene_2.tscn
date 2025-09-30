@@ -56,6 +56,3 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.096204735, 0.09620475, 0.096204735, 1)
-
-[node name="CanvasLayer" parent="." index="5"]
-visible = false

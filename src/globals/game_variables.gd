@@ -2,6 +2,7 @@ extends Node
 signal request_play_text
 
 var agresivity_index: int
+var ring: String 
 
 var game_save_data: Dictionary = {
     "current_scene" = null,

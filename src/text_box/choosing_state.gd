@@ -90,12 +90,13 @@ func handle_input(_event: InputEvent) -> void:
         
         fms.emit_text_to_add_signal(choices_text[marked_choice], fms.actors[1])
         
-        fms.text = answers_text[marked_choice]
         
-        if triggers[marked_choice] == true:
+        if triggers[marked_choice]!= null:
             fms.trigger_choice = choices_text[marked_choice]
         
         fms.text_ind = 0
+        fms.text = answers_text[marked_choice]
+
         fms.max_text_ind = fms.text.size()
         
         emit_signal("set_next_state","Writing")

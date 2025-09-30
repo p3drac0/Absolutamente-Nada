@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhfnkushgklhq"]
+
+[ext_resource type="PackedScene" uid="uid://cp405qriprfoj" path="res://src/scenes/scene_main.tscn" id="1_uwi2l"]
+[ext_resource type="Script" uid="uid://ccmpkjd41dd5j" path="res://src/scenes/each_scene/act_1/scene_4/scene_4.gd" id="2_abnfw"]
+
+[node name="Scene4" instance=ExtResource("1_uwi2l")]
+script = ExtResource("2_abnfw")
