@@ -27,6 +27,8 @@ MusicManager="*res://src/globals/music_manager.tscn"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
+window/stretch/mode="canvas_items"
+window/stretch/aspect="ignore"
 
 [input]
 
