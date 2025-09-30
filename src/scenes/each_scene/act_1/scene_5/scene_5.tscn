@@ -1,5 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1f08ys470oi0"]
+[gd_scene load_steps=3 format=3 uid="uid://b1f08ys470oi0"]
 
 [ext_resource type="PackedScene" uid="uid://cp405qriprfoj" path="res://src/scenes/scene_main.tscn" id="1_56ony"]
+[ext_resource type="Script" uid="uid://dg26rh3l1daur" path="res://src/scenes/each_scene/act_1/scene_5/scene_5.gd" id="2_i85ua"]
 
-[node name="SceneMain" instance=ExtResource("1_56ony")]
+[node name="Scene5" instance=ExtResource("1_56ony")]
+script = ExtResource("2_i85ua")

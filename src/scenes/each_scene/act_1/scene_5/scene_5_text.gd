@@ -2,12 +2,12 @@ extends Node
 
 var text_dict: Dictionary = {
         0: {
-            "text":["¿Deberían llevar el abrigo?, va a ser lo mejor, fuera hoy todo está húmedo y frío."],
+            "text":[],
             
             "choices": [],
             "answers": [],
             "triggers": [],
-            "actors": ["René","René"]
+            "actors": ["René"]
             },
 
         1: {
@@ -17,6 +17,6 @@ var text_dict: Dictionary = {
             "choices": [],
             "answers": [],
             "triggers": [],
-            "actors": ["René","René"]
+            "actors": ["René"]
             },
         }

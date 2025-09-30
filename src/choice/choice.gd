@@ -1,7 +1,6 @@
 extends HBoxContainer
 
 @export var selected: bool = false
-
 @onready var choice_label: Label = $Text/ChoiceLabel
     
 func select(): 
