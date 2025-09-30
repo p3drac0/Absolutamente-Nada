@@ -1,9 +1,9 @@
 extends Node
 class_name SceneMain
 
-@onready var text_box: Control = $TextBox
-@onready var conversation_log: Control = $ConversationLog
-@onready var pause_menu: Control = $PauseMenu
+@onready var text_box: Control = $CanvasLayer2/TextBox
+@onready var conversation_log: Control = $CanvasLayer2/ConversationLog
+@onready var pause_menu: Control = $CanvasLayer2/PauseMenu
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sfx: AudioStreamPlayer = $Sfx
 

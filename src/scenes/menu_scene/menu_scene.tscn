@@ -1,0 +1,123 @@
+[gd_scene load_steps=4 format=3 uid="uid://v53rghrd271u"]
+
+[ext_resource type="Shader" uid="uid://eeko8kvnablm" path="res://assets/shaders/scene_main.gdshader" id="1_ct0r2"]
+[ext_resource type="LabelSettings" uid="uid://ca41asmhqaxc2" path="res://assets/fonts/shadow_label.tres" id="2_eexid"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dhd2j"]
+shader = ExtResource("1_ct0r2")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.0
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.090000004275
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = false
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 0.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.20000000298023
+shader_parameter/noise_opacity = 0.0370000017575
+shader_parameter/noise_speed = 1.0
+shader_parameter/static_noise_intensity = 0.11600000551
+shader_parameter/aberration = -0.024999953687499965
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.22000001045
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 1.0
+
+[node name="MenuScene" type="Node2D"]
+
+[node name="BlackBackground" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_dhd2j")
+offset_left = 14.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Play" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 634.0
+offset_top = 623.0
+offset_right = 1293.0
+offset_bottom = 939.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Play"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = -14.5
+offset_right = 37.0
+offset_bottom = 14.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+text = "PLAY"
+label_settings = ExtResource("2_eexid")
+
+[node name="Credits" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 247.0
+offset_top = 764.0
+offset_right = 906.0
+offset_bottom = 1093.0
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Credits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+text = "CREDITS"
+label_settings = ExtResource("2_eexid")
+
+[node name="Quit" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1132.0
+offset_top = 632.0
+offset_right = 1805.0
+offset_bottom = 958.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Quit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = -30.5
+offset_right = 37.0
+offset_bottom = 30.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+text = "QUIT
+"
+label_settings = ExtResource("2_eexid")

@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqt6ugnlk4r68"]
+[gd_scene load_steps=6 format=3 uid="uid://dqt6ugnlk4r68"]
 
 [ext_resource type="PackedScene" uid="uid://cp405qriprfoj" path="res://src/scenes/scene_main.tscn" id="1_w8s1t"]
 [ext_resource type="Script" uid="uid://c2qtg1pbkudva" path="res://src/scenes/each_scene/act_1/scene_2/scene_2.gd" id="2_cn354"]
-[ext_resource type="Script" uid="uid://bf28w1u3eef74" path="res://src/scenes/each_scene/act_1/scene_2/scene_2_text.gd" id="3_cn354"]
 
 [sub_resource type="Animation" id="Animation_cn354"]
 length = 0.001
@@ -44,12 +43,12 @@ _data = {
 [node name="Scene2" instance=ExtResource("1_w8s1t")]
 script = ExtResource("2_cn354")
 
-[node name="AnimationPlayer" parent="." index="0"]
+[node name="AnimationPlayer" parent="." index="1"]
 libraries = {
 &"": SubResource("AnimationLibrary_kj81w")
 }
 
-[node name="ColorRect" type="ColorRect" parent="." index="2"]
+[node name="ColorRect2" type="ColorRect" parent="." index="2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -58,8 +57,5 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.096204735, 0.09620475, 0.096204735, 1)
 
-[node name="TextBox" parent="." index="4"]
-text_data = ExtResource("3_cn354")
-
-[node name="ConversationLog" parent="." index="5"]
-self_modulate = Color(1, 1, 1, 0)
+[node name="CanvasLayer" parent="." index="5"]
+visible = false
