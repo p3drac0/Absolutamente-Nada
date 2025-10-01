@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://bgsh0ukw6hvqi"]
+
+[ext_resource type="PackedScene" uid="uid://cp405qriprfoj" path="res://src/scenes/scene_main.tscn" id="1_nqjq1"]
+[ext_resource type="Script" uid="uid://bm11xhc27us0b" path="res://src/scenes/each_scene/act_1/scene_1/scene_1.gd" id="2_o2o8s"]
+[ext_resource type="Script" uid="uid://cqpqj6fosabqw" path="res://src/scenes/each_scene/act_1/scene_1/scene_1_text.gd" id="3_q85bd"]
+
+[sub_resource type="Animation" id="Animation_cn354"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_w8s1t"]
+resource_name = "photo_in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kj81w"]
+_data = {
+&"RESET": SubResource("Animation_cn354"),
+&"photo_in": SubResource("Animation_w8s1t")
+}
+
+[node name="Scene2" instance=ExtResource("1_nqjq1")]
+script = ExtResource("2_o2o8s")
+fps = 1.4
+photo_path = "res://assets/images/scenes/E2/"
+
+[node name="AnimationPlayer" parent="." index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_kj81w")
+}
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+position = Vector2(960, 540)
+
+[node name="ColorRect" type="ColorRect" parent="." index="3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextBox" parent="CanvasLayer2" index="2"]
+text_data = ExtResource("3_q85bd")
