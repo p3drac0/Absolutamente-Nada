@@ -33,7 +33,7 @@ func load_photo_batch(folder_path: String):
     files = []
     
     while file_name != "":
-        if file_name.ends_with(".png"):
+        if file_name.ends_with(".png") or file_name.ends_with(".jpg"):
             files.append(file_name)
         file_name = dir.get_next()
     

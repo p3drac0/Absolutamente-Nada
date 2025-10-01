@@ -6,7 +6,7 @@
 
 [node name="Scene12" instance=ExtResource("1_nvwmw")]
 script = ExtResource("2_ykrym")
-photo_path = "res://assets/images/scenes/E13a1/"
+photo_path = "res://assets/images/scenes/E12/"
 
 [node name="TextBox" parent="CanvasLayer2" index="2"]
 text_data = ExtResource("3_8g3dc")

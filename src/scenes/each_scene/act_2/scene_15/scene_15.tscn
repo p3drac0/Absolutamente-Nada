@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://fuhegbr4g8fj"]
+
+[ext_resource type="PackedScene" uid="uid://cp405qriprfoj" path="res://src/scenes/scene_main.tscn" id="1_mo6kp"]
+[ext_resource type="Script" uid="uid://dnfe8ba3ut6i4" path="res://src/scenes/each_scene/act_2/scene_15/scene_15.gd" id="2_xeedh"]
+[ext_resource type="Script" uid="uid://bitds02refcfq" path="res://src/scenes/each_scene/act_2/scene_15/scene_15_text.gd" id="3_g152v"]
+
+[node name="Scene15" instance=ExtResource("1_mo6kp")]
+script = ExtResource("2_xeedh")
+photo_path = "res://assets/images/scenes/E15a/"
+
+[node name="TextBox" parent="CanvasLayer2" index="2"]
+text_data = ExtResource("3_g152v")

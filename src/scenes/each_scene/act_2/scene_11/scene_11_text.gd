@@ -52,7 +52,7 @@ var text_dict: Dictionary = {
                 [""],
                 ],
             
-            "triggers": ['next_scene','next_scene','next_scene'],
+            "triggers": ['water','coca'],
             "actors": ["Sam", "René"]
             },
         }
