@@ -17,6 +17,11 @@ func _on_triggering(trigger_choice) -> void:
     elif trigger_choice == 'to_drink':
         text_box.fms.play_script_text(2)
         
-    elif trigger_choice == 'next_scene':
+    elif trigger_choice == 'water':
+        GameVariables.drink == 'water'
+        get_tree().change_scene_to_file(NEXT_SCENE)
+        
+    elif trigger_choice == 'coca':
+        GameVariables.drink == 'coca'
         get_tree().change_scene_to_file(NEXT_SCENE)
         
