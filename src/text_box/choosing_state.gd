@@ -90,7 +90,7 @@ func handle_input(_event: InputEvent) -> void:
         
         
         if triggers[marked_choice]!= null:
-            fms.trigger_choice = choices_text[marked_choice]
+            fms.trigger_choice = triggers[marked_choice]
         
         fms.text_ind = 0
         fms.text = answers_text[marked_choice]

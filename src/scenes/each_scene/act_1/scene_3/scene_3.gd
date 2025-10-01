@@ -11,7 +11,7 @@ func start_scene() -> void:
 
 func _on_triggering(trigger) -> void:
     
-    print(trigger)
+
     if trigger == "ring_1":
         GameVariables.ring = "ring_1"
         get_tree().change_scene_to_file(NEXT_SCENE)
