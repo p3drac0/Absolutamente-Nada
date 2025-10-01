@@ -88,7 +88,7 @@ func handle_input(_event: InputEvent) -> void:
         
         fms.emit_text_to_add_signal(choices_text[marked_choice], fms.actors[1])
         
-        
+        print(triggers[marked_choice])
         if triggers[marked_choice] != "":
             fms.trigger_choice = triggers[marked_choice]
         

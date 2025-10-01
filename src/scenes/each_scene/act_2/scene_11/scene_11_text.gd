@@ -18,7 +18,7 @@ var text_dict: Dictionary = {
                 [""],
                 ],
             
-            "triggers": ["","","",'keep_asking'],
+            "triggers": ["","","","keep_asking"],
             "actors": ["René", "Sam"]
             },
             
@@ -32,12 +32,29 @@ var text_dict: Dictionary = {
             ],
             
             "answers": [
-                ["…", "Do you want something to drink?"],
-                ["…", "Do you want something to drink?"],
-                ["…", "Do you want something to drink?"],
+                ["…"],
+                ["…"],
+                ["…"],
                 ],
             
             "triggers": ['to_drink','to_drink','to_drink'],
             "actors": ["René", "Sam"]
             },
+        
+        2: {
+            "text":["Do you want something to drink?"],
+            
+            "choices": ["Yes, thanks, a glass of water will do.", 
+            "I’ve had enough water with that downpour, do you have a soft drink?"],
+            
+            "answers": [
+                [""],
+                [""],
+                [""],
+                ],
+            
+            "triggers": ['next_scene','next_scene','next_scene'],
+            "actors": ["Sam", "René"]
+            },
         }
+        
