@@ -26,5 +26,7 @@ script = ExtResource("2_gjy56")
 offset_left = 220.0
 offset_right = 1720.0
 
-[node name="TextBox" parent="CanvasLayer2" index="0"]
+[node name="TextBox" parent="CanvasLayer2" index="2"]
 text_data = SubResource("GDScript_pcjek")
+
+[connection signal="finished" from="Sfx" to="." method="_on_sfx_finished"]
