@@ -79,8 +79,3 @@ offset_bottom = 1080.0
 [node name="ConversationLog" parent="CanvasLayer2" instance=ExtResource("3_xe301")]
 
 [node name="PauseMenu" parent="CanvasLayer2" instance=ExtResource("4_l4j23")]
-
-[node name="Control" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0

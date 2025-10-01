@@ -1,13 +1,14 @@
 extends HBoxContainer
 
 @export var selected: bool = false
-@onready var choice_label: Label = $Text/ChoiceLabel
-    
+@onready var choice_label: Label = $ChoiceLabel
+@onready var choice_marker: Label = $ChoiceMarker
+
 func select(): 
     
     for choice in get_parent().get_children():
         choice.selected = false
-        choice.get_node("Marker/ChoiceMarker").visible = false
+        choice.choice_marker.modulate.a = 0
         
     selected = true
-    $Marker/ChoiceMarker.visible = true
+    choice_marker.modulate.a = 255
