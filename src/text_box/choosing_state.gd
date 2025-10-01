@@ -8,7 +8,7 @@ const CHOICE_SCENE = preload("res://src/choice/choice.tscn")
 @onready var arrow : Label = $"../../TextPanel/Arrow"
 
 @onready var fms: Node = get_parent()
-@onready var choices_container: VBoxContainer = $"../../ScrollContainer/Choices"
+@onready var choices_container: VBoxContainer = $"../../Choices"
 
 @onready var choices_text: Array
 @onready var answers_text: Array 
@@ -40,10 +40,10 @@ func enter(_previous_state_name: String):
         
         choices_container.add_child(new_choice)
         
-        #new_choice.custom_minimum_size.y = 450
+        new_choice.custom_minimum_size.y = 50
         # evitar que se expandan verticalmente
-        #new_choice.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-        #
+        new_choice.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+        
         new_choice.choice_label.text = choice
         
         choices_text.append(choice)
@@ -77,10 +77,10 @@ func handle_input(_event: InputEvent) -> void:
         
     elif _event.is_action_pressed("down"):
         if marked_choice + 1 > choices.size() - 1:
-            marked_choice = 0
+            marked_choice=0
             
         else:
-            marked_choice += 1
+            marked_choice+=1
         choices[marked_choice].select()
         
     elif _event.is_action_pressed("continue"):
@@ -98,8 +98,10 @@ func handle_input(_event: InputEvent) -> void:
         fms.text = answers_text[marked_choice]
 
         fms.max_text_ind = fms.text.size()
-        
-        emit_signal("set_next_state","Writing")
+        if answers_text[marked_choice][0] =="":
+            fms.emit_trigger_signal(fms.all_triggers[marked_choice])
+        else :
+            emit_signal("set_next_state","Writing")
         
 func clean_choices():
     for choice in choices_container.get_children():
