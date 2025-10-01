@@ -2,21 +2,11 @@ extends Node
 
 var text_dict: Dictionary = {
         0: {
-            "text":[],
+            "text":["Should I take an umbrella? It’s been raining all afternoon, but it looks like it’s stopping…"],
             
-            "choices": [],
-            "answers": [],
-            "triggers": [],
-            "actors": ["René"]
-            },
-
-        1: {
-            "text":["¡¿Ya son las 7?!… no puede ser, siempre llego tarde soy un desastre.",
-            "Hoy no debería. Sam me pidió que fuera puntual, no me gustaría hacerlo esperar…"],
-            
-            "choices": [],
-            "answers": [],
-            "triggers": [],
-            "actors": ["René"]
+            "choices": ["[Take umbrella]","[Don’t take it]"],
+            "answers": [["Better safe than sorry."],["Bah, I’m sure the worst is over."]],
+            "triggers": ["umbrella","not_umbrella"],
+            "actors": ["René","René"]
             },
         }

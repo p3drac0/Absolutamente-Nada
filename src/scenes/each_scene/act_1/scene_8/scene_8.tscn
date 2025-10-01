@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyguu0efrofj7"]
+
+[ext_resource type="PackedScene" uid="uid://cp405qriprfoj" path="res://src/scenes/scene_main.tscn" id="1_pcmyr"]
+[ext_resource type="Script" uid="uid://sgb68vbjai64" path="res://src/scenes/each_scene/act_1/scene_8/scene_8.gd" id="2_3r3kw"]
+[ext_resource type="Script" uid="uid://bxtclmohsdxg5" path="res://src/scenes/each_scene/act_1/scene_8/scene_8_text.gd" id="3_avd1l"]
+
+[node name="Scene8" instance=ExtResource("1_pcmyr")]
+script = ExtResource("2_3r3kw")
+photo_path = "res://assets/images/scenes/E8/"
+
+[node name="TextureRect" parent="CanvasLayer" index="0"]
+offset_left = 220.0
+offset_right = 1720.0
+
+[node name="TextBox" parent="CanvasLayer2" index="0"]
+text_data = ExtResource("3_avd1l")
