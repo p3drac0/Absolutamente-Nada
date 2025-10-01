@@ -4,9 +4,9 @@
 [ext_resource type="Script" uid="uid://6lyonb6spa6i" path="res://src/scenes/each_scene/act_2/scene_12/scene_12.gd" id="2_ykrym"]
 [ext_resource type="Script" uid="uid://dlirtlf23tk7p" path="res://src/scenes/each_scene/act_2/scene_12/scene_12_text.gd" id="3_8g3dc"]
 
-[node name="Scene11" instance=ExtResource("1_nvwmw")]
+[node name="Scene12" instance=ExtResource("1_nvwmw")]
 script = ExtResource("2_ykrym")
-photo_path = "res://assets/images/scenes/E11/"
+photo_path = "res://assets/images/scenes/E13a1/"
 
 [node name="TextBox" parent="CanvasLayer2" index="2"]
 text_data = ExtResource("3_8g3dc")

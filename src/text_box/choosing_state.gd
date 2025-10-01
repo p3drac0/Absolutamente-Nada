@@ -52,7 +52,6 @@ func enter(_previous_state_name: String):
         
         i += 1
     
-    
     if choices_container.get_children().size() > 0: 
         choices_container.get_children()[0].select()
         
@@ -88,7 +87,6 @@ func handle_input(_event: InputEvent) -> void:
         
         fms.emit_text_to_add_signal(choices_text[marked_choice], fms.actors[1])
         
-        print(triggers[marked_choice])
         if triggers[marked_choice] != "":
             fms.trigger_choice = triggers[marked_choice]
         
@@ -99,7 +97,7 @@ func handle_input(_event: InputEvent) -> void:
         fms.max_text_ind = fms.text.size() - 1
         
         if answers_text[marked_choice][0] == "":
-            fms.emit_trigger_signal(fms.all_triggers[marked_choice])
+            fms.emit_trigger_signal(fms.trigger_choice)
             
         else :
             emit_signal("set_next_state","Writing")

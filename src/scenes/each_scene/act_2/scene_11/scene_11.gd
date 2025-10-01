@@ -1,6 +1,6 @@
 extends SceneMain
 
-const NEXT_SCENE: String = "res://src/scenes/each_scene/act_1/scene_12/scene_12.tscn"
+const NEXT_SCENE: String = "res://src/scenes/each_scene/act_2/scene_12/scene_12.tscn"
 
 func start_scene() -> void:
     load_photo_batch(photo_path)
@@ -17,4 +17,6 @@ func _on_triggering(trigger_choice) -> void:
     elif trigger_choice == 'to_drink':
         text_box.fms.play_script_text(2)
         
+    elif trigger_choice == 'next_scene':
+        get_tree().change_scene_to_file(NEXT_SCENE)
         

@@ -44,11 +44,10 @@ var text_dict: Dictionary = {
         2: {
             "text":["Do you want something to drink?"],
             
-            "choices": ["Yes, thanks, a glass of water will do.", 
+            "choices": ["Yes..., thanks, a glass of water will do.", 
             "I’ve had enough water with that downpour, do you have a soft drink?"],
             
             "answers": [
-                [""],
                 [""],
                 [""],
                 ],
