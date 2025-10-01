@@ -5,7 +5,7 @@ var text_dict: Dictionary = {
             "text":["..."],
             
             "choices": [
-                "Hi Sam… yeah, I got soaked on the way. Can you lend me something to dry off… that box you’re carrying, I’ve never seen it before. What is it", 
+                "Hi Sam… yeah, I got soaked on the way. Can you lend me something to dry off… that box you’re carrying, I’ve never seen it before. What is it?", 
                 "Hello, good thing I grabbed the umbrella, it’s pouring! Whoa, what’s that you’re holding",
                 "Hey, you look wrecked. So, what’s up, dude? Are we hanging out here a bit longer? And what the hell is that ugly box",
                 "What’s up, Sam? Thanks for inviting me, and sorry for being late, it’s raining cats and dogs haha… Wow, that’s a beautiful box! What’s inside?",
@@ -20,7 +20,7 @@ var text_dict: Dictionary = {
                 ["Nothing at all"]
                 ],
             
-            "triggers": ['trig_1','trig_1','trig_1','trig_1','trig_1'],
+            "triggers": ['trig','trig','trig','trig','trig'],
             "actors": ["René", "Sam"]
             },
             

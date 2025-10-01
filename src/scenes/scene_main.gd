@@ -59,7 +59,7 @@ func load_photo_batch(folder_path: String):
 func start_scene() -> void:
     pass
  
-func _on_triggering(trigger_choice) -> void:
+func _on_triggering(_trigger_choice) -> void:
     pass
     
 func _input(event: InputEvent) -> void:

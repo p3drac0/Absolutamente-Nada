@@ -12,6 +12,7 @@ var all_triggers: Array
 var actors: Array
 var trigger_choice: String
 
+var current_actor: String
 var text_id: int 
 var text_ind: int 
 var max_text_ind: int 
@@ -43,5 +44,6 @@ func play_script_text(id: int):
     text_ind = 0
     max_text_ind = text.size() - 1
     
+    current_actor = actors[0]
     current_state.start_writing()
         

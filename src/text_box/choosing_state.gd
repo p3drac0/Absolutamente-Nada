@@ -89,15 +89,16 @@ func handle_input(_event: InputEvent) -> void:
         fms.emit_text_to_add_signal(choices_text[marked_choice], fms.actors[1])
         
         
-        if triggers[marked_choice]!= null:
+        if triggers[marked_choice] != "":
             fms.trigger_choice = triggers[marked_choice]
         
         fms.text_ind = 0
         fms.text = answers_text[marked_choice]
-
+        fms.current_actor = fms.actors[1]
+        
         fms.max_text_ind = fms.text.size() - 1
         
-        if answers_text[marked_choice][0] =="":
+        if answers_text[marked_choice][0] == "":
             fms.emit_trigger_signal(fms.all_triggers[marked_choice])
             
         else :
