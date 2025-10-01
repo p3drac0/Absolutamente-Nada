@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://btn1tpns6fnvp"]
+
+[ext_resource type="PackedScene" uid="uid://cp405qriprfoj" path="res://src/scenes/scene_main.tscn" id="1_6u3ag"]
+[ext_resource type="Script" uid="uid://c4etw0majre7l" path="res://src/scenes/each_scene/act_1/scene_9/scene_9.gd" id="2_gjy56"]
+
+[sub_resource type="GDScript" id="GDScript_pcjek"]
+script/source = "extends Node
+
+
+
+var text_dict: Dictionary = {
+        0: {
+            \"text\":[\"Here we are… weird, I feel a shiver… focus, René, you’re almost there. Should I ring the bell or just knock? \",\"Sam’s neighbor always complains about the bell at this hour… she even called the cops once. Maybe it’s better to keep it down? I don’t know…\"],
+            \"choices\": [\"[Ring bell]\",\"[Knock on the door]\"],
+            \"answers\": [\" \",\" \"],
+            \"triggers\": [\"bell\",\"door\"],
+            \"actors\": [\"René\",\"René\"]
+            },
+        }
+"
+
+[node name="Scene9" instance=ExtResource("1_6u3ag")]
+script = ExtResource("2_gjy56")
+
+[node name="TextureRect" parent="CanvasLayer" index="0"]
+offset_left = 220.0
+offset_right = 1720.0
+
+[node name="TextBox" parent="CanvasLayer2" index="0"]
+text_data = SubResource("GDScript_pcjek")

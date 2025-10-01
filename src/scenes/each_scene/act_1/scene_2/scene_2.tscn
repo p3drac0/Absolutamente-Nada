@@ -44,7 +44,7 @@ _data = {
 [node name="Scene2" instance=ExtResource("1_w8s1t")]
 script = ExtResource("2_cn354")
 fps = 1.4
-photo_path = "res://assets/images/scenes/E6/"
+photo_path = "res://assets/images/scenes/E2/"
 
 [node name="AnimationPlayer" parent="." index="1"]
 libraries = {
@@ -53,7 +53,6 @@ libraries = {
 
 [node name="AnimatedSprite2D" parent="." index="2"]
 position = Vector2(960, 540)
-animation = &"test"
 
 [node name="ColorRect" type="ColorRect" parent="." index="3"]
 layout_mode = 1

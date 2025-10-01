@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3xmxb7n6i1x4"]
+
+[ext_resource type="PackedScene" uid="uid://cp405qriprfoj" path="res://src/scenes/scene_main.tscn" id="1_j7pip"]
+[ext_resource type="Script" uid="uid://dbbhfet13gkv7" path="res://src/scenes/each_scene/act_1/scene_7/scene_7.gd" id="2_ft6w8"]
+
+[sub_resource type="GDScript" id="GDScript_soe6q"]
+script/source = "extends Node
+
+
+
+var text_dict: Dictionary = {
+        0: {
+            \"text\":[\"I knew there wasn’t going to be any parking nearby…\"],
+            \"choices\": [],
+            \"answers\": [],
+            \"triggers\": [],
+            \"actors\": [\"René\",\"René\"]
+            },
+        }
+"
+
+[node name="Scene7" instance=ExtResource("1_j7pip")]
+script = ExtResource("2_ft6w8")
+photo_path = "res://assets/images/scenes/E7/"
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+animation = &"test"
+
+[node name="TextureRect" parent="CanvasLayer" index="0"]
+offset_left = 220.0
+offset_right = 1720.0
+
+[node name="TextBox" parent="CanvasLayer2" index="0"]
+text_data = SubResource("GDScript_soe6q")
