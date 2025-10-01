@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=3 uid="uid://8lvn77854eeo"]
+
+[ext_resource type="PackedScene" uid="uid://cp405qriprfoj" path="res://src/scenes/scene_main.tscn" id="1_fsird"]
+[ext_resource type="Script" uid="uid://cmr0xl6w1pq3v" path="res://src/scenes/each_scene/act_3/scene_16/scene_16.gd" id="2_snwq7"]
+[ext_resource type="Script" uid="uid://c7qmwxqj3dlj" path="res://src/scenes/each_scene/act_3/scene_16/scene_16_text.gd" id="3_tw707"]
+
+[sub_resource type="Animation" id="Animation_qpil7"]
+resource_name = "kill"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Courtain:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.0333333, 4.99),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(5.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_kill_sound"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_eqyqf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Courtain:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4nd5t"]
+_data = {
+&"RESET": SubResource("Animation_eqyqf"),
+&"kill": SubResource("Animation_qpil7")
+}
+
+[node name="Scene16" instance=ExtResource("1_fsird")]
+script = ExtResource("2_snwq7")
+photo_path = "res://assets/images/scenes/E11/"
+
+[node name="AnimationPlayer" parent="." index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_4nd5t")
+}
+autoplay = "kill"
+
+[node name="TextBox" parent="CanvasLayer2" index="2"]
+text_data = ExtResource("3_tw707")
+
+[node name="Courtain" type="ColorRect" parent="." index="6"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 1923.0
+offset_bottom = 1085.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="finished" from="Sfx" to="." method="_on_sfx_finished"]
