@@ -9,7 +9,7 @@ var text_dict: Dictionary = {
                 "[Don't pick the box]"
                 ],
             
-"answers": [["When did I turn into an animal, how could I let myself go like this, all because of that piece of wood… ","this isn’t me… I can’t let it control me… I can’t lose myself… I can’t open the box…"],["..."]],
+            "answers": ["",""],
             
             "triggers": ["box","no_box"],
             "actors": ["René", "René"]
@@ -23,7 +23,7 @@ var text_dict: Dictionary = {
                 "[Don't pick the box]"
                 ],
             
-            "answers": [["When did I turn into an animal, how could I let myself go like this, all because of that piece of wood… ","this isn’t me… I can’t let it control me… I can’t lose myself… I can’t open the box…"],["..."]],
+            "answers": ["",""],
             
             "triggers": ["box","no_box"],
             "actors": ["René", "René"]
@@ -36,7 +36,7 @@ var text_dict: Dictionary = {
                 "[Don't pick the box]"
                 ],
             
-"answers": [["When did I turn into an animal, how could I let myself go like this, all because of that piece of wood… ","this isn’t me… I can’t let it control me… I can’t lose myself… I can’t open the box…"],["..."]],
+            "answers": ["",""],
             
             "triggers": ["box","no_box"],
             "actors": ["René", "René"]

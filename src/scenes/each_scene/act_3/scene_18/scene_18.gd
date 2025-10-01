@@ -1,6 +1,6 @@
 extends SceneMain
 
-var NEXT_SCENE:PackedScene
+var NEXT_SCENE=load("res://src/scenes/each_scene/act_3/scene_18/scene_18.tscn")
 var chosen_text:int=0
 func start_scene() -> void:
     match GameVariables.weapon:
@@ -21,12 +21,10 @@ func _on_triggering(trigger_choice) -> void:
     
     if trigger_choice == "box":
         GameVariables.box=true
-        NEXT_SCENE=load("res://src/scenes/each_scene/act_3/scene_18/scene_18.tscn")
+        
         
     elif trigger_choice == "no_box":
         GameVariables.box=false
-        NEXT_SCENE=load("res://src/scenes/each_scene/act_3/scene_23/scene_23.tscn")
         
-    get_tree().change_scene_to_packed(NEXT_SCENE)    
         
         
