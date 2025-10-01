@@ -9,6 +9,7 @@ func enter(_previous_state_name : String):
 
 func handle_input(_event: InputEvent) -> void:
     if _event.is_action_pressed("ui_accept"):
+        
         $"../../AnimationPlayer".stop()
         arrow.visible = false
         

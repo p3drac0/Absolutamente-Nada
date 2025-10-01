@@ -7,8 +7,5 @@
 [node name="Scene5" instance=ExtResource("1_56ony")]
 script = ExtResource("2_i85ua")
 
-[node name="AnimatedSprite2D" parent="." index="2"]
-animation = &"test"
-
 [node name="TextBox" parent="CanvasLayer2" index="0"]
 text_data = ExtResource("3_6wwtr")

@@ -23,9 +23,6 @@ var text_dict: Dictionary = {
 script = ExtResource("2_ft6w8")
 photo_path = "res://assets/images/scenes/E7/"
 
-[node name="AnimatedSprite2D" parent="." index="2"]
-animation = &"test"
-
 [node name="TextureRect" parent="CanvasLayer" index="0"]
 offset_left = 220.0
 offset_right = 1720.0

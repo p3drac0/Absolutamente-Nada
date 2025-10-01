@@ -18,7 +18,7 @@ var marked_choice: int = 0
 
 func enter(_previous_state_name: String):
     var i : int = 0
-    
+    var j : int = 0
     #hide text 
     #$"../../Container/Text".text=""
     #$"../../Container/Text".visible = false
@@ -40,11 +40,8 @@ func enter(_previous_state_name: String):
         
         choices_container.add_child(new_choice)
         
-        new_choice.custom_minimum_size.y = 50
-        # evitar que se expandan verticalmente
-        new_choice.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-        
-        new_choice.choice_label.text = choice
+        j += 1
+        new_choice.choice_label.text = str(j) + ". " + choice
         
         choices_text.append(choice)
         
@@ -68,7 +65,7 @@ func handle_input(_event: InputEvent) -> void:
     
     if _event.is_action_pressed("up"):
         if marked_choice == 0:
-            marked_choice = choices.size() - 1
+            pass
             
         else:
             marked_choice -= 1
@@ -77,10 +74,11 @@ func handle_input(_event: InputEvent) -> void:
         
     elif _event.is_action_pressed("down"):
         if marked_choice + 1 > choices.size() - 1:
-            marked_choice=0
+            pass
             
         else:
-            marked_choice+=1
+            marked_choice += 1
+            
         choices[marked_choice].select()
         
     elif _event.is_action_pressed("continue"):
@@ -97,9 +95,11 @@ func handle_input(_event: InputEvent) -> void:
         fms.text_ind = 0
         fms.text = answers_text[marked_choice]
 
-        fms.max_text_ind = fms.text.size()
+        fms.max_text_ind = fms.text.size() - 1
+        
         if answers_text[marked_choice][0] =="":
             fms.emit_trigger_signal(fms.all_triggers[marked_choice])
+            
         else :
             emit_signal("set_next_state","Writing")
         

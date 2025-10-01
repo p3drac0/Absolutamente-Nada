@@ -128,6 +128,8 @@ size_flags_vertical = 8
 script = ExtResource("10_3ftsg")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
+z_index = 10
+z_as_relative = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.78000003
