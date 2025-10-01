@@ -1,6 +1,6 @@
 extends StateMachine
 
-@onready var choices_blocked: Array 
+@onready var choices_blocked: Array = []
 
 signal triggering(trigger_choice: String)
 signal text_to_add(text_to_add: String, who: String)
@@ -38,8 +38,6 @@ func play_script_text(id: int):
     all_answers = text_dict[text_id]["answers"]
     all_triggers = text_dict[text_id]["triggers"]
     actors = text_dict[text_id]["actors"]
-    
-    choices_blocked = []
     
     text_ind = 0
     max_text_ind = text.size() - 1
