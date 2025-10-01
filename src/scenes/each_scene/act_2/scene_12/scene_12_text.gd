@@ -38,6 +38,6 @@ var text_dict: Dictionary = {
                 ],
             
             "triggers": ['to_drink','to_drink','to_drink'],
-            "actors": ["René", "Sam"]
+            "actors": ["Sam", "René"]
             },
         }

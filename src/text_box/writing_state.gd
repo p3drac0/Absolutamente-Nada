@@ -17,7 +17,10 @@ func enter(_previous_state_name : String) -> void:
     
     text_label.visible_characters = 0
     
-    text_label.text = fms.current_actor + "  — " + fms.text[fms.text_ind]
+    if fms.current_actor == "":
+        text_label.text = fms.text[fms.text_ind]
+    else:
+        text_label.text = fms.current_actor + "  — " + fms.text[fms.text_ind]
     
     arrow.visible = false
     audio_stream.play()
