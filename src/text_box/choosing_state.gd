@@ -8,7 +8,7 @@ const CHOICE_SCENE = preload("res://src/choice/choice.tscn")
 @onready var arrow : Label = $"../../TextPanel/Arrow"
 
 @onready var fms: Node = get_parent()
-@onready var choices_container: VBoxContainer = $"../../Choices"
+@onready var choices_container: VBoxContainer = $"../../ScrollContainer/Choices"
 
 @onready var choices_text: Array
 @onready var answers_text: Array 
