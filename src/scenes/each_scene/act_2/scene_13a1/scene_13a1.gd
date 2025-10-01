@@ -7,6 +7,7 @@ const NEXT_SCENE_C: String = "res://src/scenes/each_scene/act_2/scene_15/scene_1
 func start_scene() -> void:
     
     if GameVariables.weapon == 'scissors':
+        text_box.fms.choices_blocked.append("[Take the scissors]")
         photo_path = 'res://assets/images/scenes/E13a2/'
     else:
         photo_path = 'res://assets/images/scenes/E13a1/'
