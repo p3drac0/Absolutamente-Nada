@@ -4,7 +4,8 @@ const NEXT_SCENE: String = "res://src/scenes/each_scene/act_2/scene_10/scene_10.
 @onready var sfx_player = $Sfx
 
 func start_scene() -> void:
-
+    
+    
     if GameVariables.ring=="ring_1":
         if GameVariables.call=="bell":
             photo_path="res://assets/images/scenes/E9a1/"

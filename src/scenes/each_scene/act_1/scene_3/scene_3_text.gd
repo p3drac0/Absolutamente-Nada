@@ -2,12 +2,12 @@ extends Node
 
 var text_dict: Dictionary = {
         0: {
-            "text":["Espera, ¿Me pondré uno de los anillos?","Por qué no, ¿hoy siento la necesidad de llevarlos… pero… cuál?"],
+            "text":["Wait, should I wear one of the rings? Why not, today I feel like wearing them… but… which one?"],
             
-            "choices": ["Coger anillo fino", "Coger anillo grueso comeme los cojones"],
+            "choices": ["Pick thin ring", "Pick thick ring"],
             "answers": 
-                [["Lo clásico siempre triunfa, vamos con el fino."],
-                ["¿El grueso? Es más frio e incómodo, pero viendo como se ha puesto el día, parece que acompaña."]
+                [["Classics always win, let’s go with this one."],
+                ["This one? It’s colder and less comfortable, but seeing how the day has turned out, it seems to fit right."]
                     ],
             
             "triggers": ["ring_1", "ring_2"],

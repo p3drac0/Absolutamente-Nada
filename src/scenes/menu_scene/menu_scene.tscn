@@ -423,6 +423,7 @@ autoplay = "fade_in"
 
 [connection signal="mouse_entered" from="Play" to="Play" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Play" to="Play" method="_on_mouse_exited"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="mouse_entered" from="Credits" to="Credits" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Credits" to="Credits" method="_on_mouse_exited"]
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
