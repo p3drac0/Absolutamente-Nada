@@ -9,12 +9,10 @@ func start_scene() -> void:
         photo_path="res://assets/images/scenes/E4b/"
         
     load_photo_batch(photo_path)
-    
-    var timer = get_tree().create_timer(2.0) # 3 segundos
-    await timer.timeout
-    on_timer_timeout()
+    text_box.fms.play_with_no_text()
 
+func _on_triggering(trigger_choice) -> void:
     
-
-func on_timer_timeout():
-    get_tree().change_scene_to_file(NEXT_SCENE)
+    if trigger_choice == 'continue':
+        get_tree().change_scene_to_file(NEXT_SCENE)
+        

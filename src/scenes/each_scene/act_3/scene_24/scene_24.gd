@@ -9,7 +9,7 @@ func start_scene() -> void:
 
 func _on_triggering(trigger_choice) -> void:
     
-    if trigger_choice == '0':
+    if trigger_choice == 'end_game':
         get_tree().change_scene_to_packed(load(NEXT_SCENE))
         
         

@@ -7,7 +7,7 @@ var text_dict: Dictionary = {
             "choices": [],
             
             "answers": [[""]],
-            "triggers": [""],
+            "triggers": ["end_game"],
             "actors": ["René", "René"]
             },
         }

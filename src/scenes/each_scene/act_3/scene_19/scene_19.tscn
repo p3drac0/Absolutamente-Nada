@@ -91,7 +91,7 @@ metadata/__load_path__ = "res://src/scenes/each_scene/act_3/scene_19/scene_18_te
 
 [node name="Scene19" instance=ExtResource("1_11ti4")]
 script = ExtResource("2_hh3o5")
-photo_path = "res://assets/images/scenes/E19/"
+photo_path = "res://assets/images/scenes/E19a/"
 
 [node name="AnimationPlayer" parent="." index="1"]
 libraries = {

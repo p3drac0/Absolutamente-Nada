@@ -7,7 +7,6 @@ func start_scene() -> void:
     text_box.fms.play_script_text(GameVariables.at_door_choice)
     
 func _on_triggering(trigger_choice) -> void:
-        
-    if trigger_choice == 'trig':
+    if trigger_choice == '0':
         get_tree().change_scene_to_packed(NEXT_SCENE)
     
