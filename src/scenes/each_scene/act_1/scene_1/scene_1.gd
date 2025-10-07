@@ -5,8 +5,7 @@ const NEXT_SCENE: String = "res://src/scenes/each_scene/act_1/scene_2/scene_2.ts
 func start_scene() -> void:
 
     text_box.fms.play_script_text(0)
-    
-    pass
+    GameVariables.restart_global_variables()
 
 func _on_triggering(trigger) -> void:
     

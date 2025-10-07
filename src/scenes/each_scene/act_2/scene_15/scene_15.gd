@@ -10,11 +10,14 @@ func start_scene() -> void:
     if GameVariables.ring == 'ring_1':
         if GameVariables.drink == 'water':
             photo_path = "res://assets/images/scenes/E15a/"
+            
         elif GameVariables.drink == 'coca':  
             photo_path = "res://assets/images/scenes/E15c/"
+            
     elif GameVariables.ring == 'ring_2':
         if GameVariables.drink == 'water':
             photo_path = "res://assets/images/scenes/E15b/"
+            
         elif GameVariables.drink == 'coca':  
             photo_path = "res://assets/images/scenes/E15d/"
     
