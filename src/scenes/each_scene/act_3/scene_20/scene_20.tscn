@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://6uijnquw3go4"]
+[gd_scene load_steps=11 format=3 uid="uid://6uijnquw3go4"]
 
 [ext_resource type="PackedScene" uid="uid://cp405qriprfoj" path="res://src/scenes/scene_main.tscn" id="1_3qpht"]
 [ext_resource type="Script" uid="uid://ldar2fkt6sw4" path="res://src/scenes/each_scene/act_3/scene_20/scene_20.gd" id="2_12wya"]
 [ext_resource type="AudioStream" uid="uid://dc0wyqvyh5llk" path="res://assets/sounds/boxclose.wav" id="3_8huq7"]
 [ext_resource type="Script" uid="uid://7hlf7hcu5x7q" path="res://src/scenes/each_scene/act_3/scene_20/scene_20_text.gd" id="3_kquv6"]
+[ext_resource type="Shader" uid="uid://eeko8kvnablm" path="res://assets/shaders/scene_main.gdshader" id="4_q71pr"]
 
 [sub_resource type="Animation" id="Animation_eqyqf"]
 length = 0.001
@@ -86,6 +87,30 @@ _data = {
 &"open_box": SubResource("Animation_hjefm")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t5stg"]
+shader = ExtResource("4_q71pr")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.0
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.090000004275
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = false
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 0.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.20000000298023
+shader_parameter/noise_opacity = 0.0370000017575
+shader_parameter/noise_speed = 1.0
+shader_parameter/static_noise_intensity = 0.11600000551
+shader_parameter/aberration = -0.02499995368749996
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.22000001045
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 1.0
+
 [node name="Scene20" instance=ExtResource("1_3qpht")]
 script = ExtResource("2_12wya")
 photo_path = "res://assets/images/scenes/E20/"
@@ -97,6 +122,15 @@ libraries = {
 
 [node name="Sfx" parent="." index="3"]
 stream = ExtResource("3_8huq7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="4"]
+
+[node name="TextureRect" type="ColorRect" parent="CanvasLayer" index="0"]
+material = SubResource("ShaderMaterial_t5stg")
+offset_left = 382.0
+offset_right = 1532.0
+offset_bottom = 1080.0
+mouse_filter = 2
 
 [node name="TextBox" parent="CanvasLayer2" index="2"]
 text_data = ExtResource("3_kquv6")

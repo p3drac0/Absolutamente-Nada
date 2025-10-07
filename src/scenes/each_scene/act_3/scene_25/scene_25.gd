@@ -26,11 +26,17 @@ func start_scene() -> void:
 func _on_triggering(trigger_choice) -> void:
     
     if trigger_choice == '0':
+        text_box.fms.current_state = text_box.fms.get_node("Empty")
+        text_box.fms.current_state.enter("")
+        
         animation_player.play('to_final_monologue')
+        
+        await animation_player.animation_finished
         text_box.fms.play_script_text(3)
     
-    if trigger_choice == 'end_game':
+    if trigger_choice == '3':
         get_tree().change_scene_to_packed(load(NEXT_SCENE))
         
-        
+
+
         

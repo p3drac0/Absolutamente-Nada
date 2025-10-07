@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dfipi65kl76b5"]
+[gd_scene load_steps=10 format=3 uid="uid://dfipi65kl76b5"]
 
 [ext_resource type="PackedScene" uid="uid://cp405qriprfoj" path="res://src/scenes/scene_main.tscn" id="1_ltkjt"]
 [ext_resource type="Script" uid="uid://bjaqbxktxlcxi" path="res://src/scenes/each_scene/act_3/scene_23/scene_23.gd" id="2_0hsa1"]
+[ext_resource type="Shader" uid="uid://eeko8kvnablm" path="res://assets/shaders/scene_main.gdshader" id="3_om0ao"]
 [ext_resource type="Script" uid="uid://djbfbhex136ju" path="res://src/scenes/each_scene/act_3/scene_23/scene_23_text.gd" id="3_xma5e"]
 
 [sub_resource type="Animation" id="Animation_eqyqf"]
@@ -85,6 +86,30 @@ _data = {
 &"open_box": SubResource("Animation_hjefm")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t5stg"]
+shader = ExtResource("3_om0ao")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.0
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.090000004275
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = false
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 0.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.20000000298023
+shader_parameter/noise_opacity = 0.0370000017575
+shader_parameter/noise_speed = 1.0
+shader_parameter/static_noise_intensity = 0.11600000551
+shader_parameter/aberration = -0.02499995368749996
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.22000001045
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 1.0
+
 [node name="Scene23" instance=ExtResource("1_ltkjt")]
 script = ExtResource("2_0hsa1")
 photo_path = "res://assets/images/scenes/E10/"
@@ -93,6 +118,15 @@ photo_path = "res://assets/images/scenes/E10/"
 libraries = {
 &"": SubResource("AnimationLibrary_4nd5t")
 }
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="4"]
+
+[node name="TextureRect" type="ColorRect" parent="CanvasLayer" index="0"]
+material = SubResource("ShaderMaterial_t5stg")
+offset_left = 382.0
+offset_right = 1532.0
+offset_bottom = 1080.0
+mouse_filter = 2
 
 [node name="TextBox" parent="CanvasLayer2" index="2"]
 text_data = ExtResource("3_xma5e")
