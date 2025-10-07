@@ -5,27 +5,27 @@ var chosen_text:int=0
 func start_scene() -> void:
     match GameVariables.weapon:
         "knife":
-            photo_path="res://assets/images/scenes/E17a/"
-            chosen_text=0
+            photo_path = "res://assets/images/scenes/E17a/"
+            chosen_text = 0
         "scissors":
-            photo_path="res://assets/images/scenes/E17b/"
-            chosen_text=1
+            photo_path = "res://assets/images/scenes/E17b/"
+            chosen_text = 1
         "fight":
-            photo_path="res://assets/images/scenes/E17c/"
-            chosen_text=2
+            photo_path = "res://assets/images/scenes/E17c/"
+            chosen_text = 2
             
     load_photo_batch(photo_path)
     text_box.fms.play_script_text(chosen_text)
     
 func _on_triggering(trigger_choice) -> void:
-    print(trigger_choice)
+    
     if trigger_choice == "box":
-        GameVariables.box=true
-        NEXT_SCENE=load("res://src/scenes/each_scene/act_3/scene_18/scene_18.tscn")
+        GameVariables.box = true
+        NEXT_SCENE = load("res://src/scenes/each_scene/act_3/scene_18/scene_18.tscn")
         
     elif trigger_choice == "no_box":
-        GameVariables.box=false
-        NEXT_SCENE=load("res://src/scenes/each_scene/act_3/scene_23/scene_23.tscn")
+        GameVariables.box = false
+        NEXT_SCENE = load("res://src/scenes/each_scene/act_3/scene_23/scene_23.tscn")
         
     get_tree().change_scene_to_packed(NEXT_SCENE)    
         

@@ -22,6 +22,11 @@ func emit_trigger_signal(trigger_choice_: String):
  
 func emit_text_to_add_signal(text_to_add_: String, who_: String):
     emit_signal('text_to_add', text_to_add_, who_)
+
+func play_with_no_text():
+    
+    current_state = get_node("Paused")
+    current_state.enter("")
     
 func play_script_text(id: int):
     

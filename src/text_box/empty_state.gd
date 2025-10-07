@@ -10,7 +10,4 @@ func enter(_previous_state_key: String):
     $"../../AudioStreamPlayer".stop()
     
 func start_writing():
-    
-    
     emit_signal("set_next_state", "Writing")
-    

@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bt4267vb7wvme"]
+[gd_scene load_steps=8 format=3 uid="uid://kh7ddguii16d"]
 
-[ext_resource type="PackedScene" uid="uid://cp405qriprfoj" path="res://src/scenes/scene_main.tscn" id="1_dro7i"]
-[ext_resource type="Script" uid="uid://csbi7dum4npes" path="res://src/scenes/each_scene/act_3/scene_18/scene_18.gd" id="2_motss"]
-[ext_resource type="Script" uid="uid://03o53v0nwjhp" path="res://src/scenes/each_scene/act_3/scene_18/scene_18_text.gd" id="3_h6ox7"]
+[ext_resource type="PackedScene" uid="uid://cp405qriprfoj" path="res://src/scenes/scene_main.tscn" id="1_11ti4"]
+[ext_resource type="Script" uid="uid://b6iigk8vgdvuw" path="res://src/scenes/each_scene/act_3/scene_19/scene_19.gd" id="2_hh3o5"]
 
 [sub_resource type="Animation" id="Animation_eqyqf"]
 length = 0.001
@@ -85,9 +84,12 @@ _data = {
 &"open_box": SubResource("Animation_hjefm")
 }
 
-[node name="Scene18" instance=ExtResource("1_dro7i")]
-script = ExtResource("2_motss")
-photo_path = "res://assets/images/scenes/E18/"
+[sub_resource type="Resource" id="Resource_t7h2p"]
+metadata/__load_path__ = "res://src/scenes/each_scene/act_3/scene_19/scene_18_text.gd"
+
+[node name="Scene19" instance=ExtResource("1_11ti4")]
+script = ExtResource("2_hh3o5")
+photo_path = ""
 
 [node name="AnimationPlayer" parent="." index="1"]
 libraries = {
@@ -95,4 +97,4 @@ libraries = {
 }
 
 [node name="TextBox" parent="CanvasLayer2" index="2"]
-text_data = ExtResource("3_h6ox7")
+text_data = SubResource("Resource_t7h2p")

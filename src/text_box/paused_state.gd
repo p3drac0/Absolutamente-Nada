@@ -3,17 +3,25 @@ extends State
 @onready var fms : Node = get_parent()
 @onready var text_label : Label = $"../../TextPanel/Text"
 @onready var arrow : Label = $"../../TextPanel/Arrow"
-
-func enter(_previous_state_name : String):
+@onready var no_text = false
+func enter(previous_state_name : String):
+    
+    if previous_state_name == "":
+        no_text = true 
+        
+    arrow.visible = true
     $"../../AnimationPlayer".play("arrow_blink")
-
+    
 func handle_input(_event: InputEvent) -> void:
     if _event.is_action_pressed("ui_accept"):
         
         $"../../AnimationPlayer".stop()
         arrow.visible = false
         
-        if fms.text_ind < fms.max_text_ind:
+        if no_text:
+            fms.emit_trigger_signal('continue')
+            
+        elif fms.text_ind < fms.max_text_ind:
             fms.text_ind += 1
             emit_signal("set_next_state", "Writing")
             

@@ -17,7 +17,7 @@ var text_dict: Dictionary = {
                 ["You think opening it will change something… but it won’t change anything at all…"]
                 ],
             
-            "triggers": ["final_pasive", "high_agression", "medium_agression", "low_agression"],
+            "triggers": ["final_pasive", "low_agression", "medium_agression", "high_agression"],
             "actors": ["René", "Sam"]
             },
  
