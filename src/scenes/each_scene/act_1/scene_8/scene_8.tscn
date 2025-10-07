@@ -12,5 +12,5 @@ photo_path = "res://assets/images/scenes/E8/"
 offset_left = 220.0
 offset_right = 1720.0
 
-[node name="TextBox" parent="CanvasLayer2" index="0"]
+[node name="TextBox" parent="CanvasLayer2" index="2"]
 text_data = ExtResource("3_avd1l")

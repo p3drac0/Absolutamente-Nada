@@ -1,6 +1,6 @@
 extends SceneMain
 
-var NEXT_SCENE=load("res://src/scenes/each_scene/act_3/scene_17/scene_17.tscn")
+var NEXT_SCENE = load("res://src/scenes/each_scene/act_3/scene_17/scene_17.tscn")
 
 func start_scene() -> void:
     match GameVariables.weapon:

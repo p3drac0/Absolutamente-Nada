@@ -21,6 +21,7 @@ var text_dict: Dictionary = {
 
 [node name="Scene9" instance=ExtResource("1_6u3ag")]
 script = ExtResource("2_gjy56")
+photo_path = "res://assets/images/scenes/E9a1/"
 
 [node name="TextureRect" parent="CanvasLayer" index="0"]
 offset_left = 220.0

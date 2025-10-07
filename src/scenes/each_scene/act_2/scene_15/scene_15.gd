@@ -1,6 +1,6 @@
 extends SceneMain
 
-const NEXT_SCENE_A: String = "res://src/scenes/each_scene/act_2/scene_24/scene_24cn"
+const NEXT_SCENE_A: String = "res://src/scenes/each_scene/act_3/scene_24/scene_24.tscn"
 const NEXT_SCENE_B: String = "res://src/scenes/each_scene/act_2/scene_16a/scene_16a.tscn"
 const NEXT_SCENE_C: String = "res://src/scenes/each_scene/act_2/scene_16b/scene_16b.tscn"
 const NEXT_SCENE_D: String = "res://src/scenes/each_scene/act_2/scene_16c/scene_16c.tscn"
@@ -36,7 +36,6 @@ func start_scene() -> void:
 func _on_triggering(trigger_choice) -> void:
     
     if trigger_choice == 'final_pasive':
-        GameVariables.keep_investigate = true
         get_tree().change_scene_to_file(NEXT_SCENE_A)
         
     elif trigger_choice == 'leave':

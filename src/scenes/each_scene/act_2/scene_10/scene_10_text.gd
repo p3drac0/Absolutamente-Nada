@@ -41,7 +41,7 @@ var text_dict: Dictionary = {
                 ["Oh, yes, sorry… come in…"],
                 ],
             
-            "triggers": [null, null, null, 'come_in'],
+            "triggers": ["","","", 'come_in'],
             "actors": ["René", "Sam"]
             },
         }

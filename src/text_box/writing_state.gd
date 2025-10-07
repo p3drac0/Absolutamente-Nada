@@ -39,7 +39,7 @@ func _on_timer_timeout():
         timer.queue_free()
         audio_stream.stop()
         
-        fms.emit_text_to_add_signal(fms.text[fms.text_ind], fms.actors[0])
+        fms.emit_text_to_add_signal(fms.text[fms.text_ind], fms.current_actor)
         
         #we need to keep showing the current message
         emit_signal("set_next_state","Paused")
