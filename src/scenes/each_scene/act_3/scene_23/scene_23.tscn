@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://kh7ddguii16d"]
+[gd_scene load_steps=8 format=3 uid="uid://dfipi65kl76b5"]
 
-[ext_resource type="PackedScene" uid="uid://cp405qriprfoj" path="res://src/scenes/scene_main.tscn" id="1_11ti4"]
-[ext_resource type="Script" uid="uid://b6iigk8vgdvuw" path="res://src/scenes/each_scene/act_3/scene_19/scene_19.gd" id="2_hh3o5"]
-[ext_resource type="AudioStream" uid="uid://crqh7ky1k2kq1" path="res://assets/sounds/boxopen.wav" id="3_6tut1"]
+[ext_resource type="PackedScene" uid="uid://cp405qriprfoj" path="res://src/scenes/scene_main.tscn" id="1_ltkjt"]
+[ext_resource type="Script" uid="uid://bjaqbxktxlcxi" path="res://src/scenes/each_scene/act_3/scene_23/scene_23.gd" id="2_0hsa1"]
+[ext_resource type="Script" uid="uid://djbfbhex136ju" path="res://src/scenes/each_scene/act_3/scene_23/scene_23_text.gd" id="3_xma5e"]
 
 [sub_resource type="Animation" id="Animation_eqyqf"]
 length = 0.001
@@ -51,7 +51,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_hjefm"]
 resource_name = "open_box"
-length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -86,22 +85,16 @@ _data = {
 &"open_box": SubResource("Animation_hjefm")
 }
 
-[sub_resource type="Resource" id="Resource_t7h2p"]
-metadata/__load_path__ = "res://src/scenes/each_scene/act_3/scene_19/scene_18_text.gd"
-
-[node name="Scene19" instance=ExtResource("1_11ti4")]
-script = ExtResource("2_hh3o5")
-photo_path = "res://assets/images/scenes/E19/"
+[node name="Scene23" instance=ExtResource("1_ltkjt")]
+script = ExtResource("2_0hsa1")
+photo_path = "res://assets/images/scenes/E10/"
 
 [node name="AnimationPlayer" parent="." index="1"]
 libraries = {
 &"": SubResource("AnimationLibrary_4nd5t")
 }
 
-[node name="Sfx" parent="." index="3"]
-stream = ExtResource("3_6tut1")
-
 [node name="TextBox" parent="CanvasLayer2" index="2"]
-text_data = SubResource("Resource_t7h2p")
+text_data = ExtResource("3_xma5e")
 
 [connection signal="finished" from="Sfx" to="." method="_on_sfx_finished"]

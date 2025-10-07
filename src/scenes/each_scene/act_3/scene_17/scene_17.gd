@@ -1,7 +1,7 @@
 extends SceneMain
 
-var NEXT_SCENE:PackedScene
-var chosen_text:int=0
+var NEXT_SCENE: PackedScene
+var chosen_text: int = 0
 func start_scene() -> void:
     match GameVariables.weapon:
         "knife":

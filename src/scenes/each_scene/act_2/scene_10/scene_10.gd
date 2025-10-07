@@ -18,6 +18,8 @@ func start_scene() -> void:
 func _on_triggering(trigger_choice) -> void:
     
     if trigger_choice == "trig":
+        GameVariables.at_door_choice = trigger_choice.to_int()
+        
         text_box.fms.play_script_text(1)
     
     elif trigger_choice == 'come_in':

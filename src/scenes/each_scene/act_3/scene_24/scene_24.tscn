@@ -67,11 +67,3 @@ autoplay = "kill"
 
 [node name="TextBox" parent="CanvasLayer2" index="2"]
 text_data = ExtResource("3_bjsgg")
-
-[node name="Courtain" type="ColorRect" parent="." index="6"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_right = 1923.0
-offset_bottom = 1085.0
-mouse_filter = 2
-color = Color(0, 0, 0, 1)

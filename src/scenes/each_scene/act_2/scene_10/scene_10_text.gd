@@ -20,7 +20,7 @@ var text_dict: Dictionary = {
                 ["Nothing at all"]
                 ],
             
-            "triggers": ['trig','trig','trig','trig','trig'],
+            "triggers": ['0','1','2','3','4'],
             "actors": ["René", "Sam"]
             },
             

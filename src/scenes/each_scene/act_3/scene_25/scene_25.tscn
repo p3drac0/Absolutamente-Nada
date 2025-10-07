@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://kh7ddguii16d"]
+[gd_scene load_steps=9 format=3 uid="uid://7wvn8yyc8sp2"]
 
-[ext_resource type="PackedScene" uid="uid://cp405qriprfoj" path="res://src/scenes/scene_main.tscn" id="1_11ti4"]
-[ext_resource type="Script" uid="uid://b6iigk8vgdvuw" path="res://src/scenes/each_scene/act_3/scene_19/scene_19.gd" id="2_hh3o5"]
-[ext_resource type="AudioStream" uid="uid://crqh7ky1k2kq1" path="res://assets/sounds/boxopen.wav" id="3_6tut1"]
+[ext_resource type="PackedScene" uid="uid://cp405qriprfoj" path="res://src/scenes/scene_main.tscn" id="1_ygo28"]
+[ext_resource type="Script" uid="uid://dnnvujdy62h0p" path="res://src/scenes/each_scene/act_3/scene_25/scene_25.gd" id="2_wymmw"]
+[ext_resource type="Script" uid="uid://qct8cqj6eyeh" path="res://src/scenes/each_scene/act_3/scene_25/scene_25_text.gd" id="3_2ennj"]
+[ext_resource type="AudioStream" uid="uid://cby4vlmgac0p3" path="res://assets/sounds/police.wav" id="3_u81bw"]
 
 [sub_resource type="Animation" id="Animation_eqyqf"]
 length = 0.001
@@ -17,6 +18,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sfx:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_qpil7"]
@@ -49,8 +62,8 @@ tracks/1/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_hjefm"]
-resource_name = "open_box"
+[sub_resource type="Animation" id="Animation_u81bw"]
+resource_name = "fade_in"
 length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -64,34 +77,29 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
-tracks/1/type = "method"
+tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".")
+tracks/1/path = NodePath("Sfx:volume_db")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(2.7),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"play_open_box_sound"
-}]
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -20.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4nd5t"]
 _data = {
 &"RESET": SubResource("Animation_eqyqf"),
 &"kill": SubResource("Animation_qpil7"),
-&"open_box": SubResource("Animation_hjefm")
+&"to_final_monologue": SubResource("Animation_u81bw")
 }
 
-[sub_resource type="Resource" id="Resource_t7h2p"]
-metadata/__load_path__ = "res://src/scenes/each_scene/act_3/scene_19/scene_18_text.gd"
-
-[node name="Scene19" instance=ExtResource("1_11ti4")]
-script = ExtResource("2_hh3o5")
-photo_path = "res://assets/images/scenes/E19/"
+[node name="Scene25" instance=ExtResource("1_ygo28")]
+script = ExtResource("2_wymmw")
+photo_path = ""
 
 [node name="AnimationPlayer" parent="." index="1"]
 libraries = {
@@ -99,9 +107,8 @@ libraries = {
 }
 
 [node name="Sfx" parent="." index="3"]
-stream = ExtResource("3_6tut1")
+stream = ExtResource("3_u81bw")
+autoplay = true
 
 [node name="TextBox" parent="CanvasLayer2" index="2"]
-text_data = SubResource("Resource_t7h2p")
-
-[connection signal="finished" from="Sfx" to="." method="_on_sfx_finished"]
+text_data = ExtResource("3_2ennj")

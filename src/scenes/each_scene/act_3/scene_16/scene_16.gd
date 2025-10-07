@@ -20,7 +20,6 @@ func start_scene() -> void:
     text_box.fms.play_with_no_text()
 
 func _on_triggering(trigger_choice) -> void:
-    print(trigger_choice)
     if trigger_choice == 'continue':
         animation_player.play('kill')
         
