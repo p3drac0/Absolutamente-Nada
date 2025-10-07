@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://ddqkj1qly1y17"]
+[gd_scene load_steps=10 format=3 uid="uid://ddqkj1qly1y17"]
 
 [ext_resource type="PackedScene" uid="uid://cp405qriprfoj" path="res://src/scenes/scene_main.tscn" id="1_1mvfx"]
 [ext_resource type="Script" uid="uid://s1mqbasakupa" path="res://src/scenes/each_scene/act_3/scene_21/scene_21.gd" id="2_s0tgw"]
 [ext_resource type="AudioStream" uid="uid://dc0wyqvyh5llk" path="res://assets/sounds/boxclose.wav" id="3_75hxd"]
 [ext_resource type="Script" uid="uid://cupbifd6ousko" path="res://src/scenes/each_scene/act_3/scene_21/scene_21_text.gd" id="3_velea"]
+[ext_resource type="Shader" uid="uid://eeko8kvnablm" path="res://assets/shaders/scene_main.gdshader" id="4_j5jw2"]
 
 [sub_resource type="Animation" id="Animation_eqyqf"]
 length = 0.001
@@ -18,36 +19,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_qpil7"]
-resource_name = "kill"
-length = 20.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Courtain:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3.0333333, 4.99),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(5.7),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"play_kill_sound"
-}]
 }
 
 [sub_resource type="Animation" id="Animation_hjefm"]
@@ -82,9 +53,32 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4nd5t"]
 _data = {
 &"RESET": SubResource("Animation_eqyqf"),
-&"kill": SubResource("Animation_qpil7"),
 &"open_box": SubResource("Animation_hjefm")
 }
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t5stg"]
+shader = ExtResource("4_j5jw2")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.0
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.090000004275
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = false
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 0.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.20000000298023
+shader_parameter/noise_opacity = 0.0370000017575
+shader_parameter/noise_speed = 1.0
+shader_parameter/static_noise_intensity = 0.11600000551
+shader_parameter/aberration = -0.02499995368749996
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.22000001045
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 1.0
 
 [node name="Scene21" instance=ExtResource("1_1mvfx")]
 script = ExtResource("2_s0tgw")
@@ -97,6 +91,15 @@ libraries = {
 
 [node name="Sfx" parent="." index="3"]
 stream = ExtResource("3_75hxd")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="4"]
+
+[node name="TextureRect" type="ColorRect" parent="CanvasLayer" index="0"]
+material = SubResource("ShaderMaterial_t5stg")
+offset_left = 382.0
+offset_right = 1532.0
+offset_bottom = 1080.0
+mouse_filter = 2
 
 [node name="TextBox" parent="CanvasLayer2" index="2"]
 text_data = ExtResource("3_velea")

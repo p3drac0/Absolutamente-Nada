@@ -5,7 +5,6 @@ const NEXT_SCENE: String = "res://src/scenes/each_scene/act_2/scene_10/scene_10.
 
 func start_scene() -> void:
     
-    
     if GameVariables.ring == "ring_1":
         if GameVariables.door_call == "bell":
             photo_path="res://assets/images/scenes/E9a1/"
@@ -17,7 +16,7 @@ func start_scene() -> void:
             
     elif GameVariables.ring == "ring_2":
         if GameVariables.door_call == "bell":
-            photo_path="res://assets/images/scenes/E91b1/"
+            photo_path="res://assets/images/scenes/E9b1/"
             sfx_player.stream=load("res://assets/sounds/doorbell.wav")
             
         elif GameVariables.door_call == "door":

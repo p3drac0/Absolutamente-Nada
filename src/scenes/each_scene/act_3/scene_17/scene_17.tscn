@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c200nye45v61g"]
+[gd_scene load_steps=6 format=3 uid="uid://c200nye45v61g"]
 
 [ext_resource type="PackedScene" uid="uid://cp405qriprfoj" path="res://src/scenes/scene_main.tscn" id="1_dtv0c"]
 [ext_resource type="Script" uid="uid://65flslima117" path="res://src/scenes/each_scene/act_3/scene_17/scene_17.gd" id="2_1vtfq"]
@@ -19,40 +19,9 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_qpil7"]
-resource_name = "kill"
-length = 20.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Courtain:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3.0333333, 4.99),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(5.7),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"play_kill_sound"
-}]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4nd5t"]
 _data = {
-&"RESET": SubResource("Animation_eqyqf"),
-&"kill": SubResource("Animation_qpil7")
+&"RESET": SubResource("Animation_eqyqf")
 }
 
 [node name="Scene17" instance=ExtResource("1_dtv0c")]

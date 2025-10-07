@@ -14,10 +14,10 @@ func start_scene() -> void:
 func _on_triggering(trigger_choice) -> void:
         
     if trigger_choice == '0':
-        if GameVariables.door_call == 'knock':
+        if GameVariables.door_call == 'door':
             $Sfx.stream = load("res://assets/sounds/knock.wav")
             
-        elif GameVariables.door_call == 'ring_bell':
+        elif GameVariables.door_call == 'bell':
             $Sfx.stream = load("res://assets/sounds/doorbell.wav")
         
         $Sfx.play()
