@@ -25,7 +25,7 @@ func start_scene() -> void:
 
 func _on_triggering(trigger_choice) -> void:
     
-    if trigger_choice == '0':
+    if trigger_choice in ['0','1','2']:
         text_box.fms.current_state = text_box.fms.get_node("Empty")
         text_box.fms.current_state.enter("")
         
