@@ -18,7 +18,7 @@ func start_scene() -> void:
     text_box.fms.play_script_text(chosen_text)
     
 func _on_triggering(trigger_choice) -> void:
-    
+    print(trigger_choice)
     if trigger_choice == "box":
         GameVariables.box=true
         NEXT_SCENE=load("res://src/scenes/each_scene/act_3/scene_18/scene_18.tscn")

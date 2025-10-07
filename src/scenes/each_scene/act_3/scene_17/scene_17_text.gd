@@ -9,21 +9,21 @@ var text_dict: Dictionary = {
                 "[Don't pick the box]"
                 ],
             
-"answers": [["When did I turn into an animal, how could I let myself go like this, all because of that piece of wood… ","this isn’t me… I can’t let it control me… I can’t lose myself… I can’t open the box…"],["..."]],
+"answers": [["..."],["When did I turn into an animal, how could I let myself go like this, all because of that piece of wood… ","this isn’t me… I can’t let it control me… I can’t lose myself… I can’t open the box…"]],
             
             "triggers": ["box","no_box"],
             "actors": ["René", "René"]
             },
             
         1: {
-      "text":["Shit… what have I done, this isn’t the ending I wanted… everything’s covered in blood… Sam…”"],
+      "text":["Shit… what have I done, this isn’t the ending I wanted… everything’s covered in blood… Sam..."],
             
             "choices": [
                 "[Pick the box]", 
                 "[Don't pick the box]"
                 ],
             
-            "answers": [["When did I turn into an animal, how could I let myself go like this, all because of that piece of wood… ","this isn’t me… I can’t let it control me… I can’t lose myself… I can’t open the box…"],["..."]],
+            "answers": [["..."],["When did I turn into an animal, how could I let myself go like this, all because of that piece of wood… ","this isn’t me… I can’t let it control me… I can’t lose myself… I can’t open the box…"]],
             
             "triggers": ["box","no_box"],
             "actors": ["René", "René"]
@@ -36,7 +36,7 @@ var text_dict: Dictionary = {
                 "[Don't pick the box]"
                 ],
             
-"answers": [["When did I turn into an animal, how could I let myself go like this, all because of that piece of wood… ","this isn’t me… I can’t let it control me… I can’t lose myself… I can’t open the box…"],["..."]],
+"answers": [["..."],["When did I turn into an animal, how could I let myself go like this, all because of that piece of wood… ","this isn’t me… I can’t let it control me… I can’t lose myself… I can’t open the box…"]],
             
             "triggers": ["box","no_box"],
             "actors": ["René", "René"]
