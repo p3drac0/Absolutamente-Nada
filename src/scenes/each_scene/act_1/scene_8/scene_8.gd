@@ -10,11 +10,11 @@ func start_scene() -> void:
 func _on_triggering(trigger) -> void:
     
     if trigger == "bell":
-        GameVariables.call = "bell"
+        GameVariables.door_call = "bell"
         get_tree().change_scene_to_file(NEXT_SCENE)
         
     elif trigger == "door":
-        GameVariables.call = "door"
+        GameVariables.door_call = "door"
         get_tree().change_scene_to_file(NEXT_SCENE)
         
   

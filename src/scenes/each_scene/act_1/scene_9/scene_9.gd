@@ -7,24 +7,20 @@ func start_scene() -> void:
     
     
     if GameVariables.ring == "ring_1":
-        if GameVariables.call == "bell":
-            GameVariables.at_door_choice = 'ring_bell'
+        if GameVariables.door_call == "bell":
             photo_path="res://assets/images/scenes/E9a1/"
             sfx_player.stream=load("res://assets/sounds/doorbell.wav")
             
-        elif GameVariables.call == "door":
-            GameVariables.at_door_choice = 'knock'
+        elif GameVariables.door_call == "door":
             photo_path="res://assets/images/scenes/E9a2/"
             sfx_player.stream=load("res://assets/sounds/knock.wav")
             
     elif GameVariables.ring == "ring_2":
-        if GameVariables.call == "bell":
-            GameVariables.at_door_choice = 'ring_bell'
+        if GameVariables.door_call == "bell":
             photo_path="res://assets/images/scenes/E91b1/"
             sfx_player.stream=load("res://assets/sounds/doorbell.wav")
             
-        elif GameVariables.call == "door":
-            GameVariables.at_door_choice = 'knock'
+        elif GameVariables.door_call == "door":
             photo_path="res://assets/images/scenes/E9b2/"
             sfx_player.stream=load("res://assets/sounds/knock.wav")
             
