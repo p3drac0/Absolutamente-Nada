@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 GameVariables="*res://src/globals/game_variables.gd"
 TextData="*res://src/globals/text_data.gd"
 MusicManager="*res://src/globals/music_manager.tscn"
+GlobalSfx="*res://src/globals/global_sfx.tscn"
 
 [display]
 

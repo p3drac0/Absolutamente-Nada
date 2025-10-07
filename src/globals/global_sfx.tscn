@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfwphpf1wtx5m"]
+
+[ext_resource type="Script" uid="uid://c4qx6mmlafo6p" path="res://src/globals/global_sfx.gd" id="1_v3so2"]
+[ext_resource type="AudioStream" uid="uid://c7i0nhov2o2yx" path="res://assets/sounds/white_noise.mp3" id="2_6r14m"]
+[ext_resource type="AudioStream" uid="uid://dem864v3gimk6" path="res://assets/sounds/static_noise_strong.mp3" id="2_wqguo"]
+
+[node name="GlobalSfx" type="Node"]
+script = ExtResource("1_v3so2")
+
+[node name="WhiteNoise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_6r14m")
+volume_db = -30.0
+autoplay = true
+
+[node name="Glitch" type="AudioStreamPlayer" parent="."]
+
+[node name="GrayNoise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_wqguo")
+volume_db = -53.431
