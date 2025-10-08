@@ -9,9 +9,5 @@ script = ExtResource("3_tof1f")
 fps = 2.0
 photo_path = "res://assets/images/scenes/E6/"
 
-[node name="TextureRect" parent="CanvasLayer" index="0"]
-offset_left = 220.0
-offset_right = 1720.0
-
 [node name="TextBox" parent="CanvasLayer2" index="2"]
 text_data = ExtResource("3_bs0im")

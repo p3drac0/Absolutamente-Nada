@@ -27,17 +27,22 @@ func _ready() -> void:
 func load_photo_batch(folder_path: String):
     var frames
     
-    dir = DirAccess.open(folder_path)
-    dir.list_dir_begin()
-    file_name = dir.get_next()
-    files = []
+
     
-    while file_name != "":
-        if file_name.ends_with(".png") or file_name.ends_with(".jpg"):
-            files.append(file_name)
-        file_name = dir.get_next()
+    var files := []
+    var entries := ResourceLoader.list_directory(folder_path)
     
-    dir.list_dir_end()
+    if entries.is_empty():
+        print("Can't open images folder:", folder_path)
+        return files
+
+    for entry in entries:
+        if entry.ends_with("/"):
+            continue
+
+        if entry.to_lower().ends_with(".png") or entry.to_lower().ends_with(".jpg"):
+            files.append(entry)
+
     files.sort()
     
     frames = animated_sprite_2d.sprite_frames

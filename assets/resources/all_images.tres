@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ResourceGroup" load_steps=2 format=3 uid="uid://doe12qyjo6g1v"]
+
+[ext_resource type="Script" uid="uid://rdy1u2stt5rr" path="res://addons/godot_resource_groups/resource_group.gd" id="1_xxcei"]
+
+[resource]
+script = ExtResource("1_xxcei")
+base_folder = "res://assets/images/scenes"
+includes = Array[String](["*E"])
+metadata/_custom_type_script = "uid://rdy1u2stt5rr"
