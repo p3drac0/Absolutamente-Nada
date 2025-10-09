@@ -5,10 +5,10 @@ var text_dict: Dictionary = {
             "text":[""],
             
             "choices": [
-                "[Follow him]", 
-                "[Stay]",
-                "Stop acting like a weirdo, we’re not in high school anymore…",
-                "For God’s sake, Sam… are you taking the box? You really don’t trust me?"
+                "[Seguirle]", 
+                "[Quedarte]",
+                "Deja de comportarte como un bicho raro, ya no estamos en el instituto...",
+                "¡Por dios Sam! ¿Te llevas la caja? ¿De verdad no te fías de mí?"
                 ],
             
             "answers": [

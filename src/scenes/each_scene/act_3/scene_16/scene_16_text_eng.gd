@@ -2,7 +2,7 @@ extends Node
 
 var text_dict: Dictionary = {
         0: {
-            "text":["..."],
+            "text":[""],
             
             "choices": [
                 "So what’s the plan? We can watch a movie", 
@@ -23,7 +23,7 @@ var text_dict: Dictionary = {
             },
             
         1: {
-            "text":["So..."],
+            "text":["So"],
             
             "choices": [
                 "Sam, you’re really not going to tell me anything about that box? Haha", 

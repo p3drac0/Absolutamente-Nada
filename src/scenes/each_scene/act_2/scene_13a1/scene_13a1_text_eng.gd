@@ -2,7 +2,7 @@ extends Node
 
 var text_dict: Dictionary = {
         0: {
-            "text":["Let's see if I can find something that tells me why the hell Sam is acting so weird..."],
+            "text":["Let's see if I can find something that tells me why the hell Sam is acting so weird"],
             
             "choices": [
                 "[Look at tarot’s cards]", 

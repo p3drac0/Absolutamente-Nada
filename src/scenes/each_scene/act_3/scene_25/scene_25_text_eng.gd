@@ -41,7 +41,7 @@ var text_dict: Dictionary = {
             },
             
         3: {
-            "text":["I’m so sorry, Sam. I’m sorry because tonight I wasn’t myself… and you weren’t yourself either...", "I feel as if some external force was making decisions for us... as if we were puppets of something I can’t even understand or explain...", "If I could relive this night, if I could do things differently... though maybe it wouldn’t change a thing, maybe I’d still end up here once again...", "maybe there’s no escape for us, Sam..."],
+            "text":["I’m so sorry, Sam. I’m sorry because tonight I wasn’t myself… and you weren’t yourself either", "I feel as if some external force was making decisions for us as if we were puppets of something I can’t even understand or explain", "If I could relive this night, if I could do things differently though maybe it wouldn’t change a thing, maybe I’d still end up here once again", "maybe there’s no escape for us, Sam"],
             
             "choices": [],
             
