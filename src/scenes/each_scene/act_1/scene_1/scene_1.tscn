@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cp405qriprfoj" path="res://src/scenes/scene_main.tscn" id="1_nqjq1"]
 [ext_resource type="Script" uid="uid://bm11xhc27us0b" path="res://src/scenes/each_scene/act_1/scene_1/scene_1.gd" id="2_o2o8s"]
-[ext_resource type="Script" uid="uid://cqpqj6fosabqw" path="res://src/scenes/each_scene/act_1/scene_1/scene_1_text.gd" id="3_q85bd"]
+[ext_resource type="Script" uid="uid://cqpqj6fosabqw" path="res://src/scenes/each_scene/act_1/scene_1/scene_1_text_eng.gd" id="3_q85bd"]
 
 [sub_resource type="Animation" id="Animation_cn354"]
 length = 0.001

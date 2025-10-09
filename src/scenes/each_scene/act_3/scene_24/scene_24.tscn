@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cp405qriprfoj" path="res://src/scenes/scene_main.tscn" id="1_44kgr"]
 [ext_resource type="Script" uid="uid://b387c4tkeyq6h" path="res://src/scenes/each_scene/act_3/scene_24/scene_24.gd" id="2_7nsor"]
 [ext_resource type="Shader" uid="uid://eeko8kvnablm" path="res://assets/shaders/scene_main.gdshader" id="3_4eahr"]
-[ext_resource type="Script" uid="uid://cchj7i5sidddk" path="res://src/scenes/each_scene/act_3/scene_24/scene_24_text.gd" id="3_bjsgg"]
+[ext_resource type="Script" uid="uid://cchj7i5sidddk" path="res://src/scenes/each_scene/act_3/scene_24/scene_24_text_eng.gd" id="3_bjsgg"]
 
 [sub_resource type="Animation" id="Animation_eqyqf"]
 length = 0.001

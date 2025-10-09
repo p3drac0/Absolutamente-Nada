@@ -1,6 +1,8 @@
 extends Node
 signal request_play_text
 
+var lang:String='eng'
+
 var agresivity_index: int = 0
 var ring: String = 'ring_1'
 var umbrella: bool = false

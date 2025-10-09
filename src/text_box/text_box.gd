@@ -1,17 +1,22 @@
 extends Control
 
-@export_category('Scene text')
-@export var text_data : Script 
 
+
+var text_data :Script
 @onready var fms : Node = $FMS
 @onready var text_label : Label = $TextPanel/Text
 @onready var arrow : Label = $TextPanel/Arrow
 
-@onready var text_dict : Dictionary =  text_data.new().text_dict
-
+@onready var text_dict : Dictionary 
 
 func _ready() -> void:
     pass
+
+#Load the text script. main_scene.gd calls this function as ready
+func load_text_script(path:String) -> void:
+    if ResourceLoader.exists(path): 
+        text_data= load(path)  
+        text_dict=  text_data.new().text_dict
 
 func pause(node: Node):
     

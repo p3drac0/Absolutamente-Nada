@@ -16,12 +16,18 @@ var file_name
 var files
 var tex
 
+var text_path:String
+
 func _ready() -> void:
+#Set the text script automatically by building dynamic path
+    text_path=get_tree().current_scene.get_scene_file_path().get_basename()+"_text_"+GameVariables.lang+".gd"
+    text_box.load_text_script(text_path)    
+
     
     #Connect needed signals
     text_box.fms.connect('text_to_add', conversation_log.add_text)
     text_box.fms.connect("triggering", _on_triggering)
-    
+
     start_scene()
 
 func load_photo_batch(folder_path: String):

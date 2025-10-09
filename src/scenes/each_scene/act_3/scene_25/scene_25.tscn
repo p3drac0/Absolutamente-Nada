@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cp405qriprfoj" path="res://src/scenes/scene_main.tscn" id="1_ygo28"]
 [ext_resource type="Script" uid="uid://dnnvujdy62h0p" path="res://src/scenes/each_scene/act_3/scene_25/scene_25.gd" id="2_wymmw"]
-[ext_resource type="Script" uid="uid://qct8cqj6eyeh" path="res://src/scenes/each_scene/act_3/scene_25/scene_25_text.gd" id="3_2ennj"]
+[ext_resource type="Script" uid="uid://qct8cqj6eyeh" path="res://src/scenes/each_scene/act_3/scene_25/scene_25_text_eng.gd" id="3_2ennj"]
 [ext_resource type="AudioStream" uid="uid://cby4vlmgac0p3" path="res://assets/sounds/police.wav" id="3_u81bw"]
 [ext_resource type="Shader" uid="uid://eeko8kvnablm" path="res://assets/shaders/scene_main.gdshader" id="4_2y5ol"]
 

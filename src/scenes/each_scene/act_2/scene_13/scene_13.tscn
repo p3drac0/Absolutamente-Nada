@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cp405qriprfoj" path="res://src/scenes/scene_main.tscn" id="1_dk1l0"]
 [ext_resource type="Script" uid="uid://corcw2xs6ylrd" path="res://src/scenes/each_scene/act_2/scene_13/scene_13.gd" id="2_tk3cf"]
-[ext_resource type="Script" uid="uid://cla8a328jkpe5" path="res://src/scenes/each_scene/act_2/scene_13/scene_13_text.gd" id="3_cwvrp"]
+[ext_resource type="Script" uid="uid://cla8a328jkpe5" path="res://src/scenes/each_scene/act_2/scene_13/scene_13_text_eng.gd" id="3_cwvrp"]
 
 [node name="Scene13" instance=ExtResource("1_dk1l0")]
 script = ExtResource("2_tk3cf")
