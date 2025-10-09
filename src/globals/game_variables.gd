@@ -1,7 +1,23 @@
 extends Node
-signal request_play_text
 
-var lang:String='eng'
+signal lang_updated
+
+#Encapsulation principle makes worth working like that
+#This way, we ensure to translate everything as language changes
+
+
+
+var _lang:String='eng'
+var lang:String:
+    set(value):
+        if value in ["eng", "esp"]:
+            _lang = value
+            emit_signal('lang_updated')
+        else:
+            push_warning(value + ' does not exist as a language')
+    get:
+        return _lang
+
 
 var agresivity_index: int = 0
 var ring: String = 'ring_1'

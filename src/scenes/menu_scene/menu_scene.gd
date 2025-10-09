@@ -4,6 +4,7 @@ var next_scene:PackedScene
 
 func _ready() -> void:
     MusicManager.play_music(1)
+    GameVariables.connect('lang_updated',translate_text)
 
 
 
@@ -26,3 +27,18 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 func _on_play_pressed() -> void:
     next_scene=load("res://src/scenes/each_scene/act_1/scene_1/scene_1.tscn")
     $AnimationPlayer.play("fade_out")
+    
+func translate_text():
+    match GameVariables.lang:
+        'esp':
+            $Play/Label.text='JUGAR'
+            $Credits/Label.text='CRÉDITOS'
+            $Quit/Label.text='SALIR'
+        'eng':
+            $Play/Label.text='PLAY'
+            $Credits/Label.text='CREDITS'
+            $Quit/Label.text='QUIT'
+
+
+func _on_language_pressed() -> void:
+    $LangScene.visible=true

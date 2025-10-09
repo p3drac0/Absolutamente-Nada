@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://v53rghrd271u"]
+[gd_scene load_steps=16 format=3 uid="uid://v53rghrd271u"]
 
 [ext_resource type="Shader" uid="uid://eeko8kvnablm" path="res://assets/shaders/scene_main.gdshader" id="1_ct0r2"]
 [ext_resource type="Script" uid="uid://c76yxqdatuhfd" path="res://src/scenes/menu_scene/menu_scene.gd" id="1_dhd2j"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://cqw6eqywjadq2" path="res://src/commons/button.gd" id="3_1s8i6"]
 [ext_resource type="Texture2D" uid="uid://chiks0ix7x4ew" path="res://assets/images/Ilustración_sin_título(2).png" id="3_q28sq"]
 [ext_resource type="FontFile" uid="uid://bx2y68v32tckv" path="res://assets/fonts/ShineTypewriter.ttf" id="5_1s8i6"]
+[ext_resource type="Texture2D" uid="uid://c3x6labay1hst" path="res://assets/images/language_icon.png" id="8_q28sq"]
+[ext_resource type="PackedScene" uid="uid://c678xntbm3lr6" path="res://src/scenes/lang_scene/lang_scene.tscn" id="9_vmjkf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vmjkf"]
 font = ExtResource("5_1s8i6")
@@ -38,10 +40,6 @@ shader_parameter/warp_amount = 0.0
 shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.0
 shader_parameter/vignette_opacity = 0.0
-
-[sub_resource type="LabelSettings" id="LabelSettings_uauql"]
-font = ExtResource("5_1s8i6")
-font_size = 210
 
 [sub_resource type="Animation" id="Animation_vmjkf"]
 length = 0.001
@@ -92,6 +90,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Curtain:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_fdfvr"]
@@ -161,6 +171,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Curtain:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kjkt1"]
 _data = {
@@ -186,6 +208,7 @@ offset_right = 2132.0
 offset_bottom = 1061.0
 texture = ExtResource("2_fdfvr")
 expand_mode = 1
+metadata/_edit_lock_ = true
 
 [node name="Lines" type="Control" parent="."]
 modulate = Color(1, 1, 1, 0.47843137)
@@ -196,6 +219,7 @@ offset_top = -381.0
 offset_right = -2123.0
 offset_bottom = -341.0
 metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="BlackLine" type="TextureRect" parent="Lines"]
 modulate = Color(0, 0, 0, 1)
@@ -220,12 +244,13 @@ expand_mode = 1
 [node name="Title" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 26.0
-offset_top = -3.0
-offset_right = 508.0
-offset_bottom = 455.0
+offset_left = -69.0
+offset_top = -2.0
+offset_right = 413.0
+offset_bottom = 456.0
 mouse_filter = 2
 metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="Sam" type="Label" parent="Title"]
 layout_mode = 0
@@ -399,16 +424,38 @@ text = "QUIT
 "
 label_settings = ExtResource("2_eexid")
 
-[node name="TitlePH" type="Label" parent="."]
-visible = false
-offset_left = 108.0
-offset_top = 366.0
-offset_right = 2111.0
-offset_bottom = 1028.0
-text = "MIS COJONES 33"
-label_settings = SubResource("LabelSettings_uauql")
+[node name="Language" type="Button" parent="."]
+self_modulate = Color(1, 0, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1754.0
+offset_top = 32.0
+offset_right = 1885.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(64, 61)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("3_1s8i6")
+metadata/_edit_group_ = true
+
+[node name="Icon" type="TextureRect" parent="Language"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = -83.66669
+offset_bottom = 42.333336
+grow_horizontal = 2
+scale = Vector2(3, 3)
+texture = ExtResource("8_q28sq")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Curtain" type="ColorRect" parent="."]
+visible = false
 offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 2
@@ -421,6 +468,9 @@ libraries = {
 }
 autoplay = "fade_in"
 
+[node name="LangScene" parent="." instance=ExtResource("9_vmjkf")]
+visible = false
+
 [connection signal="mouse_entered" from="Play" to="Play" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Play" to="Play" method="_on_mouse_exited"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
@@ -430,4 +480,7 @@ autoplay = "fade_in"
 [connection signal="mouse_entered" from="Quit" to="Quit" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Quit" to="Quit" method="_on_mouse_exited"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="Language" to="Language" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Language" to="Language" method="_on_mouse_exited"]
+[connection signal="pressed" from="Language" to="." method="_on_language_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
