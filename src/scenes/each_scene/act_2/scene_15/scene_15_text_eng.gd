@@ -2,7 +2,7 @@ extends Node
 
 var text_dict: Dictionary = {
         0: {
-            "text":["With every passing second the air grows thicker, and that buzzing, more unbearable.", "Sam says nothing—why doesn’t he say anything… why is he looking at me like that… I feel that if I break this silence there’s no turning back… but I have to", "I’m suffocating, I need to breathe, I need the buzzing to stop…"],
+            "text":["With every passing second the air grows thicker, and that buzzing, more unbearable.", "Sam says nothing. Why doesn’t he say anything? Why is he looking at me like that? I feel that if I break this silence there’s no turning back… but I have to", "I’m suffocating, I need to breathe, I need the buzzing to stop…"],
             
             "choices": [
                 "Sam, this is getting way too strange, I’m not comfortable here, I feel like the best thing I can do is leave…", 
