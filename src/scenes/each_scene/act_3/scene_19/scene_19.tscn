@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://kh7ddguii16d"]
+[gd_scene load_steps=8 format=3 uid="uid://kh7ddguii16d"]
 
 [ext_resource type="PackedScene" uid="uid://cp405qriprfoj" path="res://src/scenes/scene_main.tscn" id="1_11ti4"]
 [ext_resource type="Script" uid="uid://b6iigk8vgdvuw" path="res://src/scenes/each_scene/act_3/scene_19/scene_19.gd" id="2_hh3o5"]
@@ -86,9 +86,6 @@ _data = {
 &"open_box": SubResource("Animation_hjefm")
 }
 
-[sub_resource type="Resource" id="Resource_t7h2p"]
-metadata/__load_path__ = "res://src/scenes/each_scene/act_3/scene_19/scene_18_text.gd"
-
 [node name="Scene19" instance=ExtResource("1_11ti4")]
 script = ExtResource("2_hh3o5")
 photo_path = "res://assets/images/scenes/E19a/"
@@ -100,8 +97,5 @@ libraries = {
 
 [node name="Sfx" parent="." index="3"]
 stream = ExtResource("3_6tut1")
-
-[node name="TextBox" parent="CanvasLayer2" index="2"]
-text_data = SubResource("Resource_t7h2p")
 
 [connection signal="finished" from="Sfx" to="." method="_on_sfx_finished"]

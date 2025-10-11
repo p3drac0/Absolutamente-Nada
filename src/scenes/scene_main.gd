@@ -19,6 +19,8 @@ var tex
 var text_path:String
 
 func _ready() -> void:
+#Shiw scene name for debug purposes    
+    $Label.text=get_tree().current_scene.name
 #Set the text script automatically by building dynamic path
     text_path=get_tree().current_scene.get_scene_file_path().get_basename()+"_text_"+GameVariables.lang+".gd"
     text_box.load_text_script(text_path)    

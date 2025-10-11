@@ -2,7 +2,7 @@ extends Node
 
 var text_dict: Dictionary = {
         0: {
-            "text":["¿Debería llevar el abrigo?, va a ser lo mejor, fuera hoy todo está húmedo y frio."],
+            "text":["¿Debería llevar el abrigo? ... Va a ser lo mejor. Fuera hoy todo está húmedo y frío."],
             
             "choices": [],
             "answers": [],
@@ -11,7 +11,7 @@ var text_dict: Dictionary = {
             },
 
         1: {
-            "text":["¡¿Ya son las 7?!… no puede ser, siempre llego tarde soy un desastre.","Hoy no debería. Sam me pidió que fuera puntual, no me gustaría hacerlo esperar…"],
+            "text":["¡¿Ya son las 7?!... No puede ser. Siempre llego tarde. Soy un desastre.","Hoy no debería. Sam me pidió que fuera puntual. No me gustaría hacerlo esperar..."],
             
             "choices": [],
             "answers": [],

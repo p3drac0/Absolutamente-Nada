@@ -7,7 +7,7 @@ var text_dict: Dictionary = {
             "choices": [
                 "¿Cuál es el plan? podríamos ver una película", 
                 "De verdad que hoy parece que estas en otro lado ¿Todo bien en el curro?",
-                "Pufff, echaba de menos esto, ¿Hace cuánto que no nos juntábamos?",
+                "Pufff, echaba de menos esto. ¿Hace cuánto que no nos juntábamos?",
                 "[Seguir preguntando sobre la caja]"
                 ],
             
@@ -23,7 +23,7 @@ var text_dict: Dictionary = {
             },
             
         1: {
-            "text":["So"],
+            "text":["Mmmmm"],
             
             "choices": [
                 "Venga Sam ¿De verdad no vas a decirme nada de esa caja? Jajaja", 

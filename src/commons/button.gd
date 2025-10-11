@@ -1,7 +1,7 @@
 extends Button
 
 
-@onready var label = get_node("Label")
+
     
 
 func _on_mouse_entered() -> void:

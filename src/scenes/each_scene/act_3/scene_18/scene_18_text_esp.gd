@@ -2,14 +2,14 @@ extends Node
 
 var text_dict: Dictionary = {
         0: {
-            "text":["Nothing?… All of this for nothing at all?"],
+            "text":["Por fin... el silencio..."],
             
             "choices": [
-                "[Close the box]", 
+                "[Abrir la caja]", 
                 ],
             
             "answers": [[""]],
-            "triggers": ["closing"],
+            "triggers": ["opening"],
             "actors": ["René", "René"]
             }
         }

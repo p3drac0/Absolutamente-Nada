@@ -2,10 +2,10 @@ extends Node
 
 var text_dict: Dictionary = {
         0: {
-            "text":["¿Nothing?… All of this for nothing at all?"],
+            "text":["¿Nada?… ¿Todo esto para nada?"],
             
             "choices": [
-                "[Close the box]", 
+                "[Cerrar la caja]", 
                 ],
             
             "answers": [[""]],
